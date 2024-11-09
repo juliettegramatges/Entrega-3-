@@ -1,0 +1,5 @@
+Flight Type,Plane Type,Length (meters),Width (meters),Height (meters),Volume (cubic meters)
+Passenger,Narrow-Body,6,3,1.5,27.0
+Passenger,Wide-Body,13,4,2.5,130.0
+Cargo,Narrow-Body,20,3,1.8,108.0
+Cargo,Wide-Body,30,5,3.0,450.0

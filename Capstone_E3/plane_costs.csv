@@ -1,0 +1,5 @@
+Plane Type,Flight Type,Fixed Cost,Cost per km
+Passenger,Narrow-Body,5000,5
+Passenger,Wide-Body,7500,7.5
+Cargo,Narrow-Body,5000,6
+Cargo,Wide-Body,7500,10
