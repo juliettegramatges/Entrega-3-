@@ -4,7 +4,6 @@ import time
 import math
 import os
 import copy
-import knapsack as kp
 import common
 import optcgcons
 
@@ -95,22 +94,6 @@ def getBestShims(pallet, items, k, nodeTorque, solDict, cfg, eta2_vol, itemsDict
 
     sh = Shims(pallet, len(whip))
     Set = [sh]
-
-    if tipo == "KP":
-        capacity = math.floor((pallet.V - pallet.PCV)*100)
-        if capacity > 0:
-            volumes = [0]*len(whip)
-            scores  = [0]*len(whip)
-            for w, item in enumerate(whip):
-                volumes[w] = math.floor(item.V*100)
-                scores[w]  = item.S
-                    
-            indexes = kp.Solve(capacity, volumes, scores)
-
-            for i in indexes:
-                item = whip[i]
-                if pallet.isFeasible(item, 1.0, k, nodeTorque,  cfg, itemsDict, lock):
-                    pallet.putItem(item, nodeTorque, solDict, N, itemsDict, lock)
 
     if tipo == "FFD":
         # First Fit Decrease - faster than KP
@@ -231,7 +214,7 @@ def Solve(pallets, items, cfg, pi, k, eta1_vol, eta2_vol, secBreak, mode, nodeTo
 
 
     for i, _ in enumerate(pallets):
-        common.fillPallet( pallets[i], items, k, nodeTorque, solDict, cfg, eta1_vol, itemsDict, lock, ts)
+        common.fillPallet( pallets[i], items, k, nodeTorque, solDict, cfg, 1.0, itemsDict, lock, ts)
 
     if mode == "Parallel":
 

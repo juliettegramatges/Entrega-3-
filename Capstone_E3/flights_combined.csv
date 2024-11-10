@@ -1,610 +1,610 @@
 origin,destinations,Flight Type,Plane Type,departure_date,Fixed Cost,Cost per km,Length (meters),Width (meters),Height (meters),Volume (cubic meters),id
-SCL,"['MIA', 'GRU', 'LIM']",Passenger,Narrow-Body,2024-01-13,,,6,3,1.5,27.0,1
-SCL,['GRU'],Passenger,Wide-Body,2024-01-11,,,13,4,2.5,130.0,2
-MIA,['LIM'],Cargo,Narrow-Body,2024-01-11,,,20,3,1.8,108.0,3
-MEX,['GRU'],Cargo,Wide-Body,2024-01-11,,,30,5,3.0,450.0,4
-MEX,['LIM'],Passenger,Narrow-Body,2024-01-08,,,6,3,1.5,27.0,5
-MEX,['GRU'],Passenger,Narrow-Body,2024-01-09,,,6,3,1.5,27.0,6
-EZE,"['LIM', 'GRU']",Cargo,Narrow-Body,2024-01-13,,,20,3,1.8,108.0,7
-EZE,['MEX'],Cargo,Narrow-Body,2024-01-10,,,20,3,1.8,108.0,8
-GRU,['MEX'],Passenger,Narrow-Body,2024-01-08,,,6,3,1.5,27.0,9
-BOG,['LIM'],Passenger,Narrow-Body,2024-01-12,,,6,3,1.5,27.0,10
-MEX,['LIM'],Passenger,Narrow-Body,2024-01-07,,,6,3,1.5,27.0,11
-MEX,['GRU'],Cargo,Narrow-Body,2024-01-11,,,20,3,1.8,108.0,12
-GRU,"['MEX', 'SCL']",Cargo,Wide-Body,2024-01-10,,,30,5,3.0,450.0,13
-EZE,"['GRU', 'MIA', 'MEX']",Cargo,Narrow-Body,2024-01-08,,,20,3,1.8,108.0,14
-MEX,"['MIA', 'BOG']",Cargo,Narrow-Body,2024-01-11,,,20,3,1.8,108.0,15
-BOG,"['MEX', 'EZE', 'MIA']",Passenger,Narrow-Body,2024-01-08,,,6,3,1.5,27.0,16
-LIM,['MIA'],Passenger,Narrow-Body,2024-01-13,,,6,3,1.5,27.0,17
-BOG,"['MIA', 'EZE']",Passenger,Wide-Body,2024-01-10,,,13,4,2.5,130.0,18
-MEX,"['LIM', 'EZE']",Cargo,Wide-Body,2024-01-07,,,30,5,3.0,450.0,19
-LIM,['SCL'],Passenger,Wide-Body,2024-01-08,,,13,4,2.5,130.0,20
-MEX,['MIA'],Passenger,Narrow-Body,2024-01-12,,,6,3,1.5,27.0,21
-EZE,['GRU'],Cargo,Narrow-Body,2024-01-07,,,20,3,1.8,108.0,22
-SCL,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-01-12,,,6,3,1.5,27.0,23
-LIM,['GRU'],Passenger,Wide-Body,2024-01-11,,,13,4,2.5,130.0,24
-BOG,['MEX'],Cargo,Narrow-Body,2024-01-14,,,20,3,1.8,108.0,25
-BOG,"['GRU', 'MEX', 'LIM']",Cargo,Narrow-Body,2024-01-19,,,20,3,1.8,108.0,26
-MIA,['EZE'],Passenger,Narrow-Body,2024-01-16,,,6,3,1.5,27.0,27
-SCL,"['MEX', 'EZE', 'LIM']",Passenger,Narrow-Body,2024-01-19,,,6,3,1.5,27.0,28
-MIA,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-01-17,,,6,3,1.5,27.0,29
-LIM,"['EZE', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-01-20,,,20,3,1.8,108.0,30
-LIM,['SCL'],Passenger,Wide-Body,2024-01-14,,,13,4,2.5,130.0,31
-BOG,['MEX'],Cargo,Narrow-Body,2024-01-14,,,20,3,1.8,108.0,32
-LIM,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-01-14,,,20,3,1.8,108.0,33
-MIA,['SCL'],Passenger,Narrow-Body,2024-01-15,,,6,3,1.5,27.0,34
-SCL,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-01-19,,,6,3,1.5,27.0,35
-MIA,['SCL'],Cargo,Narrow-Body,2024-01-16,,,20,3,1.8,108.0,36
-SCL,"['MEX', 'GRU', 'LIM']",Cargo,Narrow-Body,2024-01-19,,,20,3,1.8,108.0,37
-EZE,['MIA'],Cargo,Narrow-Body,2024-01-17,,,20,3,1.8,108.0,38
-MEX,['MIA'],Passenger,Narrow-Body,2024-01-16,,,6,3,1.5,27.0,39
-EZE,['GRU'],Cargo,Wide-Body,2024-01-15,,,30,5,3.0,450.0,40
-MIA,['MEX'],Cargo,Narrow-Body,2024-01-18,,,20,3,1.8,108.0,41
-EZE,"['SCL', 'MEX']",Cargo,Narrow-Body,2024-01-20,,,20,3,1.8,108.0,42
-EZE,['BOG'],Cargo,Narrow-Body,2024-01-18,,,20,3,1.8,108.0,43
-MIA,['EZE'],Cargo,Narrow-Body,2024-01-14,,,20,3,1.8,108.0,44
-LIM,"['EZE', 'BOG']",Passenger,Narrow-Body,2024-01-20,,,6,3,1.5,27.0,45
-EZE,"['LIM', 'MIA']",Cargo,Narrow-Body,2024-01-14,,,20,3,1.8,108.0,46
-LIM,['EZE'],Cargo,Wide-Body,2024-01-24,,,30,5,3.0,450.0,47
-MEX,['LIM'],Cargo,Narrow-Body,2024-01-22,,,20,3,1.8,108.0,48
-EZE,"['GRU', 'SCL']",Passenger,Wide-Body,2024-01-22,,,13,4,2.5,130.0,49
-MIA,"['EZE', 'LIM']",Passenger,Narrow-Body,2024-01-22,,,6,3,1.5,27.0,50
-MIA,['SCL'],Cargo,Narrow-Body,2024-01-23,,,20,3,1.8,108.0,51
-GRU,['MIA'],Cargo,Narrow-Body,2024-01-26,,,20,3,1.8,108.0,52
-EZE,"['GRU', 'SCL']",Passenger,Narrow-Body,2024-01-22,,,6,3,1.5,27.0,53
-GRU,['LIM'],Passenger,Narrow-Body,2024-01-22,,,6,3,1.5,27.0,54
-SCL,"['BOG', 'MEX']",Cargo,Narrow-Body,2024-01-27,,,20,3,1.8,108.0,55
-EZE,['LIM'],Passenger,Narrow-Body,2024-01-22,,,6,3,1.5,27.0,56
-EZE,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-01-27,,,6,3,1.5,27.0,57
-SCL,['LIM'],Passenger,Narrow-Body,2024-01-24,,,6,3,1.5,27.0,58
-SCL,['LIM'],Passenger,Narrow-Body,2024-01-26,,,6,3,1.5,27.0,59
-GRU,"['MIA', 'SCL']",Cargo,Wide-Body,2024-01-25,,,30,5,3.0,450.0,60
-MIA,['SCL'],Passenger,Narrow-Body,2024-01-25,,,6,3,1.5,27.0,61
-EZE,['SCL'],Passenger,Narrow-Body,2024-01-24,,,6,3,1.5,27.0,62
-MEX,['LIM'],Cargo,Narrow-Body,2024-01-22,,,20,3,1.8,108.0,63
-MEX,['GRU'],Passenger,Narrow-Body,2024-01-24,,,6,3,1.5,27.0,64
-BOG,['EZE'],Passenger,Narrow-Body,2024-01-26,,,6,3,1.5,27.0,65
-GRU,['LIM'],Passenger,Narrow-Body,2024-01-23,,,6,3,1.5,27.0,66
-SCL,"['MIA', 'LIM', 'GRU']",Cargo,Narrow-Body,2024-01-23,,,20,3,1.8,108.0,67
-EZE,['GRU'],Passenger,Narrow-Body,2024-01-31,,,6,3,1.5,27.0,68
-MEX,['EZE'],Passenger,Narrow-Body,2024-02-02,,,6,3,1.5,27.0,69
-EZE,"['MIA', 'BOG', 'GRU']",Cargo,Narrow-Body,2024-01-31,,,20,3,1.8,108.0,70
-MEX,"['BOG', 'SCL', 'LIM']",Passenger,Wide-Body,2024-01-30,,,13,4,2.5,130.0,71
-GRU,['BOG'],Passenger,Narrow-Body,2024-02-02,,,6,3,1.5,27.0,72
-EZE,['LIM'],Passenger,Wide-Body,2024-02-03,,,13,4,2.5,130.0,73
-MEX,"['BOG', 'MIA', 'SCL']",Passenger,Narrow-Body,2024-01-31,,,6,3,1.5,27.0,74
-LIM,['MEX'],Passenger,Narrow-Body,2024-01-29,,,6,3,1.5,27.0,75
-GRU,['MIA'],Passenger,Narrow-Body,2024-01-31,,,6,3,1.5,27.0,76
-MEX,"['GRU', 'MIA', 'LIM']",Cargo,Narrow-Body,2024-02-03,,,20,3,1.8,108.0,77
-SCL,['LIM'],Passenger,Wide-Body,2024-01-31,,,13,4,2.5,130.0,78
-LIM,['MEX'],Passenger,Wide-Body,2024-01-29,,,13,4,2.5,130.0,79
-EZE,['MIA'],Passenger,Narrow-Body,2024-01-29,,,6,3,1.5,27.0,80
-LIM,['MIA'],Cargo,Narrow-Body,2024-01-31,,,20,3,1.8,108.0,81
-EZE,['MEX'],Passenger,Narrow-Body,2024-01-29,,,6,3,1.5,27.0,82
-EZE,['LIM'],Cargo,Narrow-Body,2024-01-28,,,20,3,1.8,108.0,83
-MIA,['LIM'],Cargo,Narrow-Body,2024-02-04,,,20,3,1.8,108.0,84
-LIM,['GRU'],Passenger,Narrow-Body,2024-02-07,,,6,3,1.5,27.0,85
-MIA,"['EZE', 'LIM']",Passenger,Narrow-Body,2024-02-10,,,6,3,1.5,27.0,86
-SCL,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-02-04,,,20,3,1.8,108.0,87
-EZE,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-02-06,,,6,3,1.5,27.0,88
-GRU,['MEX'],Passenger,Narrow-Body,2024-02-04,,,6,3,1.5,27.0,89
-EZE,['BOG'],Passenger,Wide-Body,2024-02-04,,,13,4,2.5,130.0,90
-MIA,"['SCL', 'LIM']",Cargo,Narrow-Body,2024-02-04,,,20,3,1.8,108.0,91
-MIA,['MEX'],Cargo,Narrow-Body,2024-02-05,,,20,3,1.8,108.0,92
-MEX,['EZE'],Passenger,Narrow-Body,2024-02-05,,,6,3,1.5,27.0,93
-EZE,['BOG'],Passenger,Narrow-Body,2024-02-07,,,6,3,1.5,27.0,94
-LIM,['MIA'],Passenger,Narrow-Body,2024-02-10,,,6,3,1.5,27.0,95
-MEX,['EZE'],Passenger,Narrow-Body,2024-02-06,,,6,3,1.5,27.0,96
-EZE,['BOG'],Cargo,Wide-Body,2024-02-07,,,30,5,3.0,450.0,97
-EZE,['GRU'],Passenger,Narrow-Body,2024-02-05,,,6,3,1.5,27.0,98
-EZE,['MIA'],Passenger,Narrow-Body,2024-02-10,,,6,3,1.5,27.0,99
-SCL,"['MIA', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-02-06,,,20,3,1.8,108.0,100
-MIA,['LIM'],Cargo,Narrow-Body,2024-02-04,,,20,3,1.8,108.0,101
-MEX,['LIM'],Cargo,Narrow-Body,2024-02-09,,,20,3,1.8,108.0,102
-MEX,['MIA'],Cargo,Narrow-Body,2024-02-07,,,20,3,1.8,108.0,103
-MEX,"['EZE', 'LIM', 'SCL']",Passenger,Narrow-Body,2024-02-09,,,6,3,1.5,27.0,104
-BOG,['MEX'],Cargo,Narrow-Body,2024-02-07,,,20,3,1.8,108.0,105
-SCL,['MIA'],Cargo,Narrow-Body,2024-02-06,,,20,3,1.8,108.0,106
-EZE,['MIA'],Cargo,Wide-Body,2024-02-06,,,30,5,3.0,450.0,107
-GRU,['SCL'],Cargo,Narrow-Body,2024-02-09,,,20,3,1.8,108.0,108
-MIA,['EZE'],Passenger,Wide-Body,2024-02-04,,,13,4,2.5,130.0,109
-MEX,"['LIM', 'EZE', 'SCL']",Cargo,Narrow-Body,2024-02-08,,,20,3,1.8,108.0,110
-LIM,"['MIA', 'MEX']",Cargo,Wide-Body,2024-02-05,,,30,5,3.0,450.0,111
-MIA,"['LIM', 'SCL', 'MEX']",Cargo,Wide-Body,2024-02-05,,,30,5,3.0,450.0,112
-BOG,['MEX'],Cargo,Wide-Body,2024-02-07,,,30,5,3.0,450.0,113
-LIM,['EZE'],Cargo,Narrow-Body,2024-02-10,,,20,3,1.8,108.0,114
-GRU,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-02-09,,,6,3,1.5,27.0,115
-MEX,['MIA'],Cargo,Narrow-Body,2024-02-14,,,20,3,1.8,108.0,116
-EZE,"['LIM', 'MIA', 'MEX']",Passenger,Wide-Body,2024-02-13,,,13,4,2.5,130.0,117
-BOG,"['LIM', 'EZE', 'MIA']",Cargo,Narrow-Body,2024-02-16,,,20,3,1.8,108.0,118
-BOG,['GRU'],Passenger,Narrow-Body,2024-02-17,,,6,3,1.5,27.0,119
-MEX,"['GRU', 'SCL']",Passenger,Narrow-Body,2024-02-16,,,6,3,1.5,27.0,120
-SCL,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-02-14,,,20,3,1.8,108.0,121
-GRU,['MEX'],Passenger,Narrow-Body,2024-02-13,,,6,3,1.5,27.0,122
-GRU,['MIA'],Passenger,Narrow-Body,2024-02-12,,,6,3,1.5,27.0,123
-MEX,"['LIM', 'EZE', 'BOG']",Passenger,Wide-Body,2024-02-12,,,13,4,2.5,130.0,124
-MIA,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-02-15,,,20,3,1.8,108.0,125
-MEX,['GRU'],Passenger,Narrow-Body,2024-02-15,,,6,3,1.5,27.0,126
-EZE,"['MIA', 'SCL']",Passenger,Narrow-Body,2024-02-13,,,6,3,1.5,27.0,127
-LIM,['MIA'],Cargo,Narrow-Body,2024-02-17,,,20,3,1.8,108.0,128
-MIA,['GRU'],Cargo,Narrow-Body,2024-02-17,,,20,3,1.8,108.0,129
-GRU,['LIM'],Cargo,Narrow-Body,2024-02-17,,,20,3,1.8,108.0,130
-SCL,['GRU'],Passenger,Narrow-Body,2024-02-12,,,6,3,1.5,27.0,131
-MIA,['EZE'],Passenger,Wide-Body,2024-02-11,,,13,4,2.5,130.0,132
-EZE,['SCL'],Cargo,Narrow-Body,2024-02-15,,,20,3,1.8,108.0,133
-LIM,"['MEX', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-02-17,,,6,3,1.5,27.0,134
-EZE,['MIA'],Passenger,Narrow-Body,2024-02-14,,,6,3,1.5,27.0,135
-MIA,"['EZE', 'MEX']",Cargo,Narrow-Body,2024-02-11,,,20,3,1.8,108.0,136
-MEX,['GRU'],Passenger,Narrow-Body,2024-02-11,,,6,3,1.5,27.0,137
-MEX,['EZE'],Passenger,Wide-Body,2024-02-13,,,13,4,2.5,130.0,138
-EZE,"['MEX', 'SCL', 'LIM']",Passenger,Narrow-Body,2024-02-11,,,6,3,1.5,27.0,139
-MEX,['GRU'],Passenger,Narrow-Body,2024-02-17,,,6,3,1.5,27.0,140
-MIA,['MEX'],Passenger,Narrow-Body,2024-02-22,,,6,3,1.5,27.0,141
-GRU,['SCL'],Cargo,Narrow-Body,2024-02-20,,,20,3,1.8,108.0,142
-BOG,['LIM'],Passenger,Narrow-Body,2024-02-18,,,6,3,1.5,27.0,143
-LIM,['EZE'],Passenger,Narrow-Body,2024-02-24,,,6,3,1.5,27.0,144
-MEX,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-02-20,,,6,3,1.5,27.0,145
-MEX,['GRU'],Cargo,Wide-Body,2024-02-23,,,30,5,3.0,450.0,146
-LIM,"['MIA', 'SCL']",Cargo,Narrow-Body,2024-02-21,,,20,3,1.8,108.0,147
-MEX,"['GRU', 'LIM', 'EZE']",Passenger,Wide-Body,2024-02-19,,,13,4,2.5,130.0,148
-EZE,"['GRU', 'LIM']",Passenger,Narrow-Body,2024-02-23,,,6,3,1.5,27.0,149
-EZE,['MEX'],Cargo,Narrow-Body,2024-02-22,,,20,3,1.8,108.0,150
-EZE,['GRU'],Cargo,Narrow-Body,2024-02-21,,,20,3,1.8,108.0,151
-GRU,['MEX'],Cargo,Narrow-Body,2024-02-23,,,20,3,1.8,108.0,152
-EZE,['MIA'],Cargo,Narrow-Body,2024-02-20,,,20,3,1.8,108.0,153
-EZE,['LIM'],Cargo,Narrow-Body,2024-02-23,,,20,3,1.8,108.0,154
-MEX,['GRU'],Cargo,Narrow-Body,2024-02-24,,,20,3,1.8,108.0,155
-SCL,['BOG'],Cargo,Narrow-Body,2024-02-24,,,20,3,1.8,108.0,156
-BOG,['EZE'],Passenger,Narrow-Body,2024-02-22,,,6,3,1.5,27.0,157
-LIM,['GRU'],Passenger,Narrow-Body,2024-02-23,,,6,3,1.5,27.0,158
-EZE,['SCL'],Cargo,Narrow-Body,2024-02-20,,,20,3,1.8,108.0,159
-GRU,['MEX'],Passenger,Narrow-Body,2024-02-24,,,6,3,1.5,27.0,160
-SCL,['EZE'],Passenger,Narrow-Body,2024-02-19,,,6,3,1.5,27.0,161
-EZE,['LIM'],Passenger,Wide-Body,2024-02-21,,,13,4,2.5,130.0,162
-EZE,['LIM'],Cargo,Narrow-Body,2024-02-22,,,20,3,1.8,108.0,163
-GRU,['SCL'],Cargo,Wide-Body,2024-02-21,,,30,5,3.0,450.0,164
-MEX,"['MIA', 'SCL']",Cargo,Wide-Body,2024-02-19,,,30,5,3.0,450.0,165
-EZE,['BOG'],Passenger,Wide-Body,2024-02-20,,,13,4,2.5,130.0,166
-EZE,"['MEX', 'LIM', 'GRU']",Passenger,Narrow-Body,2024-02-20,,,6,3,1.5,27.0,167
-LIM,['MEX'],Cargo,Narrow-Body,2024-02-21,,,20,3,1.8,108.0,168
-EZE,['MIA'],Cargo,Narrow-Body,2024-02-20,,,20,3,1.8,108.0,169
-EZE,['MEX'],Cargo,Narrow-Body,2024-02-21,,,20,3,1.8,108.0,170
-MEX,['EZE'],Cargo,Narrow-Body,2024-02-23,,,20,3,1.8,108.0,171
-MEX,['MIA'],Passenger,Narrow-Body,2024-02-23,,,6,3,1.5,27.0,172
-MIA,['EZE'],Cargo,Narrow-Body,2024-02-20,,,20,3,1.8,108.0,173
-LIM,"['BOG', 'GRU']",Passenger,Wide-Body,2024-02-21,,,13,4,2.5,130.0,174
-BOG,"['MEX', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-02-27,,,6,3,1.5,27.0,175
-GRU,['EZE'],Passenger,Narrow-Body,2024-02-26,,,6,3,1.5,27.0,176
-LIM,['BOG'],Passenger,Narrow-Body,2024-02-26,,,6,3,1.5,27.0,177
-GRU,['BOG'],Cargo,Wide-Body,2024-02-29,,,30,5,3.0,450.0,178
-GRU,['MEX'],Cargo,Wide-Body,2024-02-26,,,30,5,3.0,450.0,179
-EZE,['LIM'],Passenger,Narrow-Body,2024-02-26,,,6,3,1.5,27.0,180
-EZE,"['GRU', 'BOG']",Cargo,Wide-Body,2024-02-26,,,30,5,3.0,450.0,181
-GRU,['LIM'],Cargo,Narrow-Body,2024-03-01,,,20,3,1.8,108.0,182
-SCL,['EZE'],Passenger,Narrow-Body,2024-03-01,,,6,3,1.5,27.0,183
-GRU,['SCL'],Passenger,Wide-Body,2024-02-27,,,13,4,2.5,130.0,184
-SCL,['LIM'],Passenger,Wide-Body,2024-02-28,,,13,4,2.5,130.0,185
-SCL,"['EZE', 'MEX']",Cargo,Narrow-Body,2024-02-27,,,20,3,1.8,108.0,186
-LIM,['SCL'],Passenger,Narrow-Body,2024-03-02,,,6,3,1.5,27.0,187
-GRU,"['LIM', 'MEX', 'MIA']",Passenger,Wide-Body,2024-02-27,,,13,4,2.5,130.0,188
-GRU,['MIA'],Cargo,Narrow-Body,2024-03-01,,,20,3,1.8,108.0,189
-MEX,['GRU'],Passenger,Wide-Body,2024-02-27,,,13,4,2.5,130.0,190
-LIM,['MIA'],Passenger,Narrow-Body,2024-02-27,,,6,3,1.5,27.0,191
-MIA,['BOG'],Cargo,Wide-Body,2024-02-28,,,30,5,3.0,450.0,192
-MEX,['SCL'],Passenger,Narrow-Body,2024-02-26,,,6,3,1.5,27.0,193
-EZE,['LIM'],Cargo,Wide-Body,2024-03-01,,,30,5,3.0,450.0,194
-EZE,['BOG'],Cargo,Wide-Body,2024-03-01,,,30,5,3.0,450.0,195
-SCL,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-02-28,,,20,3,1.8,108.0,196
-LIM,['GRU'],Cargo,Narrow-Body,2024-03-02,,,20,3,1.8,108.0,197
-SCL,"['LIM', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-03-02,,,6,3,1.5,27.0,198
-GRU,['LIM'],Passenger,Narrow-Body,2024-03-01,,,6,3,1.5,27.0,199
-MEX,['BOG'],Passenger,Narrow-Body,2024-02-28,,,6,3,1.5,27.0,200
-SCL,['MEX'],Cargo,Narrow-Body,2024-03-06,,,20,3,1.8,108.0,201
-LIM,['GRU'],Cargo,Narrow-Body,2024-03-06,,,20,3,1.8,108.0,202
-MEX,"['GRU', 'LIM']",Passenger,Narrow-Body,2024-03-07,,,6,3,1.5,27.0,203
-LIM,"['MIA', 'EZE']",Cargo,Narrow-Body,2024-03-04,,,20,3,1.8,108.0,204
-MEX,['BOG'],Passenger,Wide-Body,2024-03-09,,,13,4,2.5,130.0,205
-MIA,"['SCL', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-03-09,,,20,3,1.8,108.0,206
-EZE,"['MEX', 'LIM', 'SCL']",Cargo,Wide-Body,2024-03-08,,,30,5,3.0,450.0,207
-SCL,['GRU'],Passenger,Narrow-Body,2024-03-04,,,6,3,1.5,27.0,208
-MEX,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-03-04,,,6,3,1.5,27.0,209
-LIM,['MIA'],Cargo,Narrow-Body,2024-03-04,,,20,3,1.8,108.0,210
-SCL,['LIM'],Cargo,Narrow-Body,2024-03-04,,,20,3,1.8,108.0,211
-LIM,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-04,,,6,3,1.5,27.0,212
-EZE,['GRU'],Passenger,Narrow-Body,2024-03-08,,,6,3,1.5,27.0,213
-EZE,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-03-03,,,6,3,1.5,27.0,214
-SCL,['GRU'],Passenger,Narrow-Body,2024-03-06,,,6,3,1.5,27.0,215
-LIM,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-09,,,6,3,1.5,27.0,216
-GRU,['LIM'],Cargo,Wide-Body,2024-03-03,,,30,5,3.0,450.0,217
-BOG,['SCL'],Passenger,Wide-Body,2024-03-03,,,13,4,2.5,130.0,218
-GRU,['BOG'],Passenger,Narrow-Body,2024-03-08,,,6,3,1.5,27.0,219
-MIA,['LIM'],Cargo,Wide-Body,2024-03-05,,,30,5,3.0,450.0,220
-BOG,['LIM'],Passenger,Narrow-Body,2024-03-06,,,6,3,1.5,27.0,221
-GRU,['LIM'],Passenger,Wide-Body,2024-03-13,,,13,4,2.5,130.0,222
-MEX,"['MIA', 'EZE', 'GRU']",Passenger,Wide-Body,2024-03-14,,,13,4,2.5,130.0,223
-MIA,"['LIM', 'BOG']",Passenger,Narrow-Body,2024-03-12,,,6,3,1.5,27.0,224
-LIM,['MEX'],Cargo,Narrow-Body,2024-03-15,,,20,3,1.8,108.0,225
-MIA,['MEX'],Cargo,Narrow-Body,2024-03-14,,,20,3,1.8,108.0,226
-MEX,['GRU'],Cargo,Narrow-Body,2024-03-13,,,20,3,1.8,108.0,227
-SCL,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-03-12,,,6,3,1.5,27.0,228
-SCL,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-15,,,6,3,1.5,27.0,229
-MEX,['SCL'],Cargo,Wide-Body,2024-03-13,,,30,5,3.0,450.0,230
-SCL,['LIM'],Passenger,Wide-Body,2024-03-15,,,13,4,2.5,130.0,231
-EZE,['MEX'],Cargo,Narrow-Body,2024-03-12,,,20,3,1.8,108.0,232
-SCL,['BOG'],Passenger,Narrow-Body,2024-03-15,,,6,3,1.5,27.0,233
-EZE,['LIM'],Cargo,Narrow-Body,2024-03-15,,,20,3,1.8,108.0,234
-MIA,['BOG'],Cargo,Wide-Body,2024-03-15,,,30,5,3.0,450.0,235
-BOG,['LIM'],Cargo,Narrow-Body,2024-03-16,,,20,3,1.8,108.0,236
-EZE,"['SCL', 'MIA', 'BOG']",Cargo,Narrow-Body,2024-03-14,,,20,3,1.8,108.0,237
-MEX,"['BOG', 'EZE']",Passenger,Narrow-Body,2024-03-11,,,6,3,1.5,27.0,238
-MIA,['MEX'],Passenger,Narrow-Body,2024-03-15,,,6,3,1.5,27.0,239
-MEX,['EZE'],Passenger,Wide-Body,2024-03-11,,,13,4,2.5,130.0,240
-MEX,['BOG'],Cargo,Narrow-Body,2024-03-15,,,20,3,1.8,108.0,241
-MIA,"['MEX', 'EZE']",Passenger,Narrow-Body,2024-03-11,,,6,3,1.5,27.0,242
-LIM,"['EZE', 'MIA']",Passenger,Narrow-Body,2024-03-17,,,6,3,1.5,27.0,243
-MEX,"['LIM', 'SCL']",Passenger,Narrow-Body,2024-03-18,,,6,3,1.5,27.0,244
-GRU,['MEX'],Cargo,Narrow-Body,2024-03-20,,,20,3,1.8,108.0,245
-GRU,['SCL'],Cargo,Wide-Body,2024-03-21,,,30,5,3.0,450.0,246
-LIM,"['SCL', 'EZE', 'MEX']",Passenger,Wide-Body,2024-03-20,,,13,4,2.5,130.0,247
-SCL,['LIM'],Passenger,Wide-Body,2024-03-21,,,13,4,2.5,130.0,248
-MEX,['EZE'],Passenger,Narrow-Body,2024-03-19,,,6,3,1.5,27.0,249
-EZE,['MEX'],Cargo,Narrow-Body,2024-03-19,,,20,3,1.8,108.0,250
-MEX,['EZE'],Cargo,Narrow-Body,2024-03-21,,,20,3,1.8,108.0,251
-MEX,['LIM'],Cargo,Narrow-Body,2024-03-21,,,20,3,1.8,108.0,252
-GRU,"['EZE', 'LIM']",Cargo,Wide-Body,2024-03-22,,,30,5,3.0,450.0,253
-MIA,['MEX'],Passenger,Wide-Body,2024-03-17,,,13,4,2.5,130.0,254
-EZE,['SCL'],Passenger,Wide-Body,2024-03-23,,,13,4,2.5,130.0,255
-GRU,['MEX'],Cargo,Narrow-Body,2024-03-20,,,20,3,1.8,108.0,256
-EZE,['LIM'],Passenger,Wide-Body,2024-03-19,,,13,4,2.5,130.0,257
-EZE,"['SCL', 'LIM', 'MEX']",Cargo,Narrow-Body,2024-03-18,,,20,3,1.8,108.0,258
-MEX,['MIA'],Cargo,Narrow-Body,2024-03-21,,,20,3,1.8,108.0,259
-EZE,['MIA'],Cargo,Narrow-Body,2024-03-23,,,20,3,1.8,108.0,260
-EZE,"['GRU', 'MEX']",Passenger,Wide-Body,2024-03-23,,,13,4,2.5,130.0,261
-GRU,['MIA'],Passenger,Narrow-Body,2024-03-18,,,6,3,1.5,27.0,262
-GRU,['MIA'],Cargo,Narrow-Body,2024-03-20,,,20,3,1.8,108.0,263
-SCL,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-03-21,,,6,3,1.5,27.0,264
-BOG,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-03-17,,,6,3,1.5,27.0,265
-MIA,['GRU'],Cargo,Narrow-Body,2024-03-20,,,20,3,1.8,108.0,266
-GRU,['SCL'],Cargo,Narrow-Body,2024-03-23,,,20,3,1.8,108.0,267
-BOG,"['LIM', 'GRU', 'MEX']",Passenger,Narrow-Body,2024-03-19,,,6,3,1.5,27.0,268
-SCL,"['LIM', 'MIA', 'BOG']",Cargo,Wide-Body,2024-03-21,,,30,5,3.0,450.0,269
-GRU,['LIM'],Passenger,Wide-Body,2024-03-26,,,13,4,2.5,130.0,270
-MEX,['EZE'],Cargo,Narrow-Body,2024-03-28,,,20,3,1.8,108.0,271
-LIM,['EZE'],Cargo,Narrow-Body,2024-03-26,,,20,3,1.8,108.0,272
-GRU,['BOG'],Cargo,Narrow-Body,2024-03-29,,,20,3,1.8,108.0,273
-MIA,['EZE'],Passenger,Narrow-Body,2024-03-24,,,6,3,1.5,27.0,274
-SCL,"['EZE', 'GRU']",Passenger,Narrow-Body,2024-03-26,,,6,3,1.5,27.0,275
-MIA,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-03-26,,,20,3,1.8,108.0,276
-SCL,['GRU'],Cargo,Narrow-Body,2024-03-27,,,20,3,1.8,108.0,277
-LIM,['EZE'],Cargo,Narrow-Body,2024-03-26,,,20,3,1.8,108.0,278
-MEX,['MIA'],Cargo,Narrow-Body,2024-03-25,,,20,3,1.8,108.0,279
-MEX,['LIM'],Passenger,Narrow-Body,2024-03-25,,,6,3,1.5,27.0,280
-LIM,['EZE'],Passenger,Narrow-Body,2024-03-30,,,6,3,1.5,27.0,281
-LIM,"['GRU', 'MEX']",Passenger,Narrow-Body,2024-03-29,,,6,3,1.5,27.0,282
-MEX,['MIA'],Passenger,Narrow-Body,2024-03-24,,,6,3,1.5,27.0,283
-MEX,"['GRU', 'EZE']",Passenger,Narrow-Body,2024-03-26,,,6,3,1.5,27.0,284
-LIM,['MIA'],Passenger,Narrow-Body,2024-03-28,,,6,3,1.5,27.0,285
-EZE,['MIA'],Cargo,Wide-Body,2024-03-30,,,30,5,3.0,450.0,286
-SCL,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-03-26,,,20,3,1.8,108.0,287
-SCL,['LIM'],Cargo,Narrow-Body,2024-03-26,,,20,3,1.8,108.0,288
-MEX,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-03-24,,,20,3,1.8,108.0,289
-GRU,['LIM'],Passenger,Narrow-Body,2024-03-28,,,6,3,1.5,27.0,290
-SCL,['LIM'],Passenger,Wide-Body,2024-03-27,,,13,4,2.5,130.0,291
-BOG,['MEX'],Passenger,Narrow-Body,2024-03-30,,,6,3,1.5,27.0,292
-LIM,['MIA'],Passenger,Narrow-Body,2024-04-03,,,6,3,1.5,27.0,293
-EZE,['GRU'],Cargo,Wide-Body,2024-04-06,,,30,5,3.0,450.0,294
-EZE,['SCL'],Passenger,Narrow-Body,2024-04-04,,,6,3,1.5,27.0,295
-LIM,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-04-02,,,6,3,1.5,27.0,296
-LIM,['MEX'],Cargo,Narrow-Body,2024-03-31,,,20,3,1.8,108.0,297
-EZE,"['MIA', 'GRU']",Cargo,Narrow-Body,2024-04-01,,,20,3,1.8,108.0,298
-LIM,['MEX'],Passenger,Wide-Body,2024-04-04,,,13,4,2.5,130.0,299
-SCL,"['MIA', 'MEX', 'BOG']",Passenger,Wide-Body,2024-03-31,,,13,4,2.5,130.0,300
-LIM,['GRU'],Cargo,Wide-Body,2024-04-02,,,30,5,3.0,450.0,301
-MEX,['LIM'],Passenger,Narrow-Body,2024-04-05,,,6,3,1.5,27.0,302
-LIM,['MIA'],Cargo,Wide-Body,2024-04-01,,,30,5,3.0,450.0,303
-BOG,['MIA'],Passenger,Wide-Body,2024-04-04,,,13,4,2.5,130.0,304
-MIA,['MEX'],Passenger,Narrow-Body,2024-03-31,,,6,3,1.5,27.0,305
-EZE,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-03-31,,,6,3,1.5,27.0,306
-EZE,['MIA'],Passenger,Narrow-Body,2024-04-03,,,6,3,1.5,27.0,307
-LIM,['SCL'],Passenger,Narrow-Body,2024-04-04,,,6,3,1.5,27.0,308
-SCL,"['BOG', 'EZE']",Passenger,Narrow-Body,2024-04-02,,,6,3,1.5,27.0,309
-MEX,['SCL'],Passenger,Narrow-Body,2024-04-05,,,6,3,1.5,27.0,310
-LIM,"['GRU', 'BOG']",Passenger,Narrow-Body,2024-04-04,,,6,3,1.5,27.0,311
-BOG,['SCL'],Cargo,Narrow-Body,2024-04-02,,,20,3,1.8,108.0,312
-MEX,['EZE'],Passenger,Wide-Body,2024-04-05,,,13,4,2.5,130.0,313
-MEX,"['GRU', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-04-06,,,6,3,1.5,27.0,314
-EZE,['GRU'],Passenger,Narrow-Body,2024-04-01,,,6,3,1.5,27.0,315
-MEX,['MIA'],Passenger,Wide-Body,2024-04-03,,,13,4,2.5,130.0,316
-EZE,['MIA'],Passenger,Narrow-Body,2024-04-01,,,6,3,1.5,27.0,317
-MEX,['LIM'],Passenger,Narrow-Body,2024-04-03,,,6,3,1.5,27.0,318
-LIM,['MIA'],Passenger,Wide-Body,2024-04-01,,,13,4,2.5,130.0,319
-MEX,['GRU'],Passenger,Narrow-Body,2024-04-13,,,6,3,1.5,27.0,320
-EZE,['MEX'],Passenger,Narrow-Body,2024-04-10,,,6,3,1.5,27.0,321
-GRU,['BOG'],Cargo,Narrow-Body,2024-04-07,,,20,3,1.8,108.0,322
-GRU,['MIA'],Cargo,Narrow-Body,2024-04-07,,,20,3,1.8,108.0,323
-MIA,['GRU'],Passenger,Narrow-Body,2024-04-13,,,6,3,1.5,27.0,324
-MIA,['GRU'],Passenger,Narrow-Body,2024-04-08,,,6,3,1.5,27.0,325
-MEX,['EZE'],Cargo,Narrow-Body,2024-04-09,,,20,3,1.8,108.0,326
-LIM,['MIA'],Passenger,Narrow-Body,2024-04-09,,,6,3,1.5,27.0,327
-EZE,"['SCL', 'GRU', 'MIA']",Passenger,Narrow-Body,2024-04-12,,,6,3,1.5,27.0,328
-MEX,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-04-07,,,6,3,1.5,27.0,329
-MEX,"['SCL', 'BOG']",Cargo,Wide-Body,2024-04-08,,,30,5,3.0,450.0,330
-MEX,['LIM'],Cargo,Wide-Body,2024-04-09,,,30,5,3.0,450.0,331
-EZE,['MIA'],Cargo,Narrow-Body,2024-04-09,,,20,3,1.8,108.0,332
-GRU,"['MEX', 'MIA']",Cargo,Narrow-Body,2024-04-11,,,20,3,1.8,108.0,333
-SCL,"['MEX', 'BOG']",Passenger,Narrow-Body,2024-04-11,,,6,3,1.5,27.0,334
-MEX,['MIA'],Passenger,Narrow-Body,2024-04-10,,,6,3,1.5,27.0,335
-LIM,"['MEX', 'GRU', 'EZE']",Cargo,Narrow-Body,2024-04-09,,,20,3,1.8,108.0,336
-EZE,"['MEX', 'GRU']",Passenger,Narrow-Body,2024-04-07,,,6,3,1.5,27.0,337
-SCL,"['EZE', 'LIM', 'MEX']",Passenger,Narrow-Body,2024-04-07,,,6,3,1.5,27.0,338
-GRU,"['EZE', 'SCL']",Cargo,Wide-Body,2024-04-12,,,30,5,3.0,450.0,339
-MIA,"['MEX', 'EZE', 'SCL']",Cargo,Narrow-Body,2024-04-09,,,20,3,1.8,108.0,340
-LIM,['MEX'],Passenger,Narrow-Body,2024-04-18,,,6,3,1.5,27.0,341
-EZE,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-04-16,,,20,3,1.8,108.0,342
-BOG,['EZE'],Cargo,Narrow-Body,2024-04-14,,,20,3,1.8,108.0,343
-MIA,['EZE'],Passenger,Narrow-Body,2024-04-16,,,6,3,1.5,27.0,344
-SCL,['GRU'],Cargo,Narrow-Body,2024-04-18,,,20,3,1.8,108.0,345
-MEX,"['SCL', 'LIM', 'BOG']",Passenger,Narrow-Body,2024-04-14,,,6,3,1.5,27.0,346
-MEX,['GRU'],Passenger,Narrow-Body,2024-04-16,,,6,3,1.5,27.0,347
-LIM,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-04-14,,,6,3,1.5,27.0,348
-MEX,['LIM'],Passenger,Narrow-Body,2024-04-15,,,6,3,1.5,27.0,349
-MIA,['LIM'],Cargo,Narrow-Body,2024-04-19,,,20,3,1.8,108.0,350
-GRU,['MIA'],Passenger,Narrow-Body,2024-04-19,,,6,3,1.5,27.0,351
-BOG,['MIA'],Passenger,Narrow-Body,2024-04-17,,,6,3,1.5,27.0,352
-MIA,['GRU'],Cargo,Narrow-Body,2024-04-18,,,20,3,1.8,108.0,353
-EZE,['MIA'],Passenger,Narrow-Body,2024-04-17,,,6,3,1.5,27.0,354
-EZE,"['LIM', 'MIA', 'MEX']",Cargo,Narrow-Body,2024-04-19,,,20,3,1.8,108.0,355
-EZE,"['MIA', 'LIM']",Cargo,Narrow-Body,2024-04-17,,,20,3,1.8,108.0,356
-SCL,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-04-17,,,6,3,1.5,27.0,357
-LIM,['SCL'],Passenger,Wide-Body,2024-04-17,,,13,4,2.5,130.0,358
-BOG,"['LIM', 'MIA', 'EZE']",Cargo,Narrow-Body,2024-04-16,,,20,3,1.8,108.0,359
-BOG,['LIM'],Passenger,Narrow-Body,2024-04-14,,,6,3,1.5,27.0,360
-BOG,['SCL'],Passenger,Narrow-Body,2024-04-15,,,6,3,1.5,27.0,361
-MIA,"['GRU', 'MEX', 'EZE']",Passenger,Wide-Body,2024-04-20,,,13,4,2.5,130.0,362
-MEX,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-04-16,,,20,3,1.8,108.0,363
-BOG,['MIA'],Passenger,Narrow-Body,2024-04-20,,,6,3,1.5,27.0,364
-LIM,['SCL'],Passenger,Wide-Body,2024-04-14,,,13,4,2.5,130.0,365
-MEX,"['LIM', 'GRU']",Cargo,Wide-Body,2024-04-14,,,30,5,3.0,450.0,366
-GRU,['EZE'],Passenger,Narrow-Body,2024-04-15,,,6,3,1.5,27.0,367
-MEX,['BOG'],Cargo,Narrow-Body,2024-04-17,,,20,3,1.8,108.0,368
-MEX,['GRU'],Passenger,Narrow-Body,2024-04-19,,,6,3,1.5,27.0,369
-MEX,"['EZE', 'GRU']",Cargo,Narrow-Body,2024-04-20,,,20,3,1.8,108.0,370
-LIM,"['BOG', 'MEX']",Cargo,Wide-Body,2024-04-18,,,30,5,3.0,450.0,371
-EZE,['MEX'],Cargo,Wide-Body,2024-04-20,,,30,5,3.0,450.0,372
-EZE,['MIA'],Cargo,Narrow-Body,2024-04-23,,,20,3,1.8,108.0,373
-LIM,['GRU'],Passenger,Wide-Body,2024-04-25,,,13,4,2.5,130.0,374
-EZE,['GRU'],Passenger,Narrow-Body,2024-04-25,,,6,3,1.5,27.0,375
-MIA,"['EZE', 'MEX', 'LIM']",Cargo,Narrow-Body,2024-04-26,,,20,3,1.8,108.0,376
-SCL,['BOG'],Cargo,Narrow-Body,2024-04-21,,,20,3,1.8,108.0,377
-MEX,"['SCL', 'GRU']",Cargo,Narrow-Body,2024-04-25,,,20,3,1.8,108.0,378
-MEX,['SCL'],Cargo,Narrow-Body,2024-04-27,,,20,3,1.8,108.0,379
-MEX,['MIA'],Passenger,Narrow-Body,2024-04-22,,,6,3,1.5,27.0,380
-SCL,"['EZE', 'GRU']",Passenger,Narrow-Body,2024-04-22,,,6,3,1.5,27.0,381
-EZE,"['MIA', 'MEX']",Passenger,Narrow-Body,2024-04-21,,,6,3,1.5,27.0,382
-EZE,['MEX'],Passenger,Wide-Body,2024-04-27,,,13,4,2.5,130.0,383
-LIM,"['GRU', 'MEX']",Cargo,Wide-Body,2024-04-25,,,30,5,3.0,450.0,384
-SCL,['MIA'],Cargo,Wide-Body,2024-04-26,,,30,5,3.0,450.0,385
-GRU,['BOG'],Passenger,Narrow-Body,2024-04-24,,,6,3,1.5,27.0,386
-GRU,['EZE'],Cargo,Narrow-Body,2024-04-23,,,20,3,1.8,108.0,387
-EZE,['MEX'],Cargo,Narrow-Body,2024-04-25,,,20,3,1.8,108.0,388
-SCL,['LIM'],Passenger,Narrow-Body,2024-04-22,,,6,3,1.5,27.0,389
-GRU,['EZE'],Passenger,Wide-Body,2024-04-26,,,13,4,2.5,130.0,390
-EZE,"['GRU', 'BOG']",Passenger,Wide-Body,2024-04-25,,,13,4,2.5,130.0,391
-MIA,['MEX'],Passenger,Narrow-Body,2024-04-25,,,6,3,1.5,27.0,392
-EZE,['GRU'],Passenger,Narrow-Body,2024-04-23,,,6,3,1.5,27.0,393
-MEX,['MIA'],Cargo,Narrow-Body,2024-05-01,,,20,3,1.8,108.0,394
-BOG,['EZE'],Passenger,Narrow-Body,2024-04-28,,,6,3,1.5,27.0,395
-GRU,['MIA'],Passenger,Narrow-Body,2024-05-04,,,6,3,1.5,27.0,396
-EZE,"['GRU', 'SCL', 'MEX']",Cargo,Narrow-Body,2024-05-02,,,20,3,1.8,108.0,397
-MEX,['EZE'],Cargo,Narrow-Body,2024-05-03,,,20,3,1.8,108.0,398
-EZE,['GRU'],Passenger,Narrow-Body,2024-04-30,,,6,3,1.5,27.0,399
-EZE,"['MEX', 'BOG']",Passenger,Narrow-Body,2024-04-29,,,6,3,1.5,27.0,400
-LIM,['MEX'],Passenger,Narrow-Body,2024-05-01,,,6,3,1.5,27.0,401
-SCL,['GRU'],Passenger,Wide-Body,2024-04-28,,,13,4,2.5,130.0,402
-MEX,['BOG'],Passenger,Narrow-Body,2024-05-02,,,6,3,1.5,27.0,403
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-03,,,6,3,1.5,27.0,404
-MEX,['LIM'],Passenger,Narrow-Body,2024-04-29,,,6,3,1.5,27.0,405
-EZE,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-04-30,,,20,3,1.8,108.0,406
-MIA,"['LIM', 'MEX']",Cargo,Wide-Body,2024-04-29,,,30,5,3.0,450.0,407
-LIM,['GRU'],Passenger,Narrow-Body,2024-05-04,,,6,3,1.5,27.0,408
-MEX,"['EZE', 'MIA']",Cargo,Narrow-Body,2024-05-02,,,20,3,1.8,108.0,409
-EZE,['MIA'],Cargo,Wide-Body,2024-05-01,,,30,5,3.0,450.0,410
-EZE,['LIM'],Passenger,Narrow-Body,2024-05-05,,,6,3,1.5,27.0,411
-LIM,['BOG'],Passenger,Narrow-Body,2024-05-07,,,6,3,1.5,27.0,412
-EZE,['GRU'],Passenger,Narrow-Body,2024-05-08,,,6,3,1.5,27.0,413
-BOG,"['SCL', 'LIM', 'MEX']",Passenger,Narrow-Body,2024-05-10,,,6,3,1.5,27.0,414
-MEX,"['LIM', 'EZE', 'BOG']",Cargo,Narrow-Body,2024-05-05,,,20,3,1.8,108.0,415
-EZE,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-05-10,,,6,3,1.5,27.0,416
-EZE,['GRU'],Passenger,Narrow-Body,2024-05-08,,,6,3,1.5,27.0,417
-MIA,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-05-09,,,20,3,1.8,108.0,418
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-11,,,6,3,1.5,27.0,419
-GRU,['MIA'],Cargo,Narrow-Body,2024-05-07,,,20,3,1.8,108.0,420
-SCL,['EZE'],Passenger,Narrow-Body,2024-05-05,,,6,3,1.5,27.0,421
-MEX,"['BOG', 'GRU', 'EZE']",Cargo,Narrow-Body,2024-05-09,,,20,3,1.8,108.0,422
-MEX,['MIA'],Passenger,Narrow-Body,2024-05-07,,,6,3,1.5,27.0,423
-MIA,"['EZE', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-05-10,,,20,3,1.8,108.0,424
-LIM,['BOG'],Cargo,Wide-Body,2024-05-09,,,30,5,3.0,450.0,425
-GRU,['MIA'],Passenger,Narrow-Body,2024-05-08,,,6,3,1.5,27.0,426
-EZE,['MEX'],Cargo,Narrow-Body,2024-05-11,,,20,3,1.8,108.0,427
-EZE,"['MEX', 'SCL', 'MIA']",Cargo,Narrow-Body,2024-05-09,,,20,3,1.8,108.0,428
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-10,,,6,3,1.5,27.0,429
-GRU,"['MEX', 'SCL', 'MIA']",Cargo,Narrow-Body,2024-05-09,,,20,3,1.8,108.0,430
-EZE,"['MIA', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-05-07,,,20,3,1.8,108.0,431
-MIA,['BOG'],Cargo,Wide-Body,2024-05-07,,,30,5,3.0,450.0,432
-EZE,['MIA'],Cargo,Wide-Body,2024-05-18,,,30,5,3.0,450.0,433
-MIA,['EZE'],Passenger,Narrow-Body,2024-05-15,,,6,3,1.5,27.0,434
-LIM,"['SCL', 'MEX', 'BOG']",Cargo,Wide-Body,2024-05-17,,,30,5,3.0,450.0,435
-GRU,['MIA'],Passenger,Narrow-Body,2024-05-18,,,6,3,1.5,27.0,436
-LIM,['EZE'],Cargo,Narrow-Body,2024-05-13,,,20,3,1.8,108.0,437
-GRU,['SCL'],Passenger,Narrow-Body,2024-05-13,,,6,3,1.5,27.0,438
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-16,,,6,3,1.5,27.0,439
-EZE,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-05-16,,,6,3,1.5,27.0,440
-LIM,['GRU'],Cargo,Narrow-Body,2024-05-14,,,20,3,1.8,108.0,441
-SCL,['MIA'],Cargo,Wide-Body,2024-05-16,,,30,5,3.0,450.0,442
-LIM,"['BOG', 'EZE', 'GRU']",Cargo,Wide-Body,2024-05-18,,,30,5,3.0,450.0,443
-MEX,"['EZE', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-05-16,,,6,3,1.5,27.0,444
-GRU,['EZE'],Passenger,Narrow-Body,2024-05-14,,,6,3,1.5,27.0,445
-LIM,"['MEX', 'MIA']",Passenger,Narrow-Body,2024-05-15,,,6,3,1.5,27.0,446
-MIA,['LIM'],Passenger,Narrow-Body,2024-05-12,,,6,3,1.5,27.0,447
-MEX,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-05-15,,,6,3,1.5,27.0,448
-MIA,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-05-13,,,20,3,1.8,108.0,449
-LIM,['EZE'],Cargo,Wide-Body,2024-05-18,,,30,5,3.0,450.0,450
-MEX,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-05-17,,,20,3,1.8,108.0,451
-SCL,['GRU'],Cargo,Narrow-Body,2024-05-13,,,20,3,1.8,108.0,452
-BOG,['MIA'],Cargo,Narrow-Body,2024-05-18,,,20,3,1.8,108.0,453
-SCL,"['GRU', 'MEX']",Passenger,Narrow-Body,2024-05-13,,,6,3,1.5,27.0,454
-EZE,['MEX'],Cargo,Narrow-Body,2024-05-13,,,20,3,1.8,108.0,455
-EZE,['BOG'],Cargo,Narrow-Body,2024-05-12,,,20,3,1.8,108.0,456
-EZE,['LIM'],Passenger,Narrow-Body,2024-05-16,,,6,3,1.5,27.0,457
-SCL,"['LIM', 'MEX']",Passenger,Wide-Body,2024-05-15,,,13,4,2.5,130.0,458
-GRU,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-05-21,,,6,3,1.5,27.0,459
-MIA,['LIM'],Cargo,Wide-Body,2024-05-25,,,30,5,3.0,450.0,460
-MEX,['SCL'],Cargo,Narrow-Body,2024-05-23,,,20,3,1.8,108.0,461
-SCL,['MEX'],Passenger,Narrow-Body,2024-05-23,,,6,3,1.5,27.0,462
-MIA,['LIM'],Passenger,Narrow-Body,2024-05-22,,,6,3,1.5,27.0,463
-LIM,['MEX'],Passenger,Narrow-Body,2024-05-21,,,6,3,1.5,27.0,464
-SCL,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-05-23,,,20,3,1.8,108.0,465
-EZE,['BOG'],Cargo,Narrow-Body,2024-05-22,,,20,3,1.8,108.0,466
-MIA,"['MEX', 'GRU']",Passenger,Narrow-Body,2024-05-25,,,6,3,1.5,27.0,467
-EZE,['MEX'],Passenger,Wide-Body,2024-05-20,,,13,4,2.5,130.0,468
-MEX,['LIM'],Passenger,Narrow-Body,2024-05-21,,,6,3,1.5,27.0,469
-LIM,['EZE'],Cargo,Narrow-Body,2024-05-19,,,20,3,1.8,108.0,470
-MEX,"['BOG', 'MIA']",Passenger,Narrow-Body,2024-05-19,,,6,3,1.5,27.0,471
-LIM,['BOG'],Passenger,Wide-Body,2024-05-23,,,13,4,2.5,130.0,472
-SCL,['GRU'],Cargo,Narrow-Body,2024-05-20,,,20,3,1.8,108.0,473
-SCL,['BOG'],Cargo,Narrow-Body,2024-05-25,,,20,3,1.8,108.0,474
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-22,,,6,3,1.5,27.0,475
-MIA,['MEX'],Passenger,Narrow-Body,2024-05-22,,,6,3,1.5,27.0,476
-MIA,"['EZE', 'SCL']",Cargo,Narrow-Body,2024-05-23,,,20,3,1.8,108.0,477
-BOG,['GRU'],Cargo,Narrow-Body,2024-05-21,,,20,3,1.8,108.0,478
-MEX,['SCL'],Cargo,Narrow-Body,2024-05-23,,,20,3,1.8,108.0,479
-GRU,"['LIM', 'MEX']",Cargo,Wide-Body,2024-05-31,,,30,5,3.0,450.0,480
-MEX,"['EZE', 'BOG']",Passenger,Narrow-Body,2024-05-31,,,6,3,1.5,27.0,481
-EZE,['LIM'],Cargo,Wide-Body,2024-05-27,,,30,5,3.0,450.0,482
-EZE,['MEX'],Passenger,Narrow-Body,2024-05-28,,,6,3,1.5,27.0,483
-BOG,['GRU'],Passenger,Narrow-Body,2024-05-30,,,6,3,1.5,27.0,484
-MIA,['EZE'],Passenger,Narrow-Body,2024-05-30,,,6,3,1.5,27.0,485
-MIA,['LIM'],Cargo,Narrow-Body,2024-05-28,,,20,3,1.8,108.0,486
-LIM,"['GRU', 'SCL', 'MIA']",Passenger,Wide-Body,2024-05-28,,,13,4,2.5,130.0,487
-EZE,['MIA'],Cargo,Narrow-Body,2024-05-28,,,20,3,1.8,108.0,488
-BOG,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-05-30,,,20,3,1.8,108.0,489
-MEX,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-05-26,,,6,3,1.5,27.0,490
-EZE,['MIA'],Cargo,Wide-Body,2024-05-29,,,30,5,3.0,450.0,491
-BOG,['SCL'],Cargo,Narrow-Body,2024-05-27,,,20,3,1.8,108.0,492
-MIA,"['GRU', 'SCL']",Cargo,Narrow-Body,2024-05-29,,,20,3,1.8,108.0,493
-LIM,"['MEX', 'MIA']",Cargo,Narrow-Body,2024-06-01,,,20,3,1.8,108.0,494
-LIM,['EZE'],Cargo,Narrow-Body,2024-05-26,,,20,3,1.8,108.0,495
-EZE,['SCL'],Cargo,Narrow-Body,2024-05-31,,,20,3,1.8,108.0,496
-MEX,['EZE'],Passenger,Narrow-Body,2024-06-01,,,6,3,1.5,27.0,497
-MEX,"['GRU', 'SCL', 'LIM']",Passenger,Narrow-Body,2024-05-28,,,6,3,1.5,27.0,498
-EZE,"['SCL', 'MIA']",Passenger,Narrow-Body,2024-05-26,,,6,3,1.5,27.0,499
-SCL,"['LIM', 'BOG']",Cargo,Wide-Body,2024-06-07,,,30,5,3.0,450.0,500
-MEX,['LIM'],Passenger,Narrow-Body,2024-06-02,,,6,3,1.5,27.0,501
-GRU,['MEX'],Cargo,Narrow-Body,2024-06-08,,,20,3,1.8,108.0,502
-GRU,['MIA'],Passenger,Narrow-Body,2024-06-04,,,6,3,1.5,27.0,503
-GRU,['LIM'],Passenger,Narrow-Body,2024-06-08,,,6,3,1.5,27.0,504
-SCL,['MIA'],Passenger,Narrow-Body,2024-06-04,,,6,3,1.5,27.0,505
-SCL,"['MEX', 'GRU']",Cargo,Wide-Body,2024-06-04,,,30,5,3.0,450.0,506
-GRU,['LIM'],Passenger,Narrow-Body,2024-06-02,,,6,3,1.5,27.0,507
-MEX,"['MIA', 'SCL']",Passenger,Wide-Body,2024-06-07,,,13,4,2.5,130.0,508
-MEX,['MIA'],Cargo,Narrow-Body,2024-06-07,,,20,3,1.8,108.0,509
-SCL,['MIA'],Passenger,Wide-Body,2024-06-07,,,13,4,2.5,130.0,510
-EZE,"['MEX', 'MIA']",Passenger,Narrow-Body,2024-06-08,,,6,3,1.5,27.0,511
-EZE,['MIA'],Cargo,Wide-Body,2024-06-07,,,30,5,3.0,450.0,512
-SCL,['MIA'],Cargo,Wide-Body,2024-06-08,,,30,5,3.0,450.0,513
-EZE,['GRU'],Passenger,Wide-Body,2024-06-07,,,13,4,2.5,130.0,514
-EZE,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-06-03,,,6,3,1.5,27.0,515
-MEX,['BOG'],Cargo,Narrow-Body,2024-06-07,,,20,3,1.8,108.0,516
-GRU,"['LIM', 'MEX', 'EZE']",Passenger,Wide-Body,2024-06-06,,,13,4,2.5,130.0,517
-EZE,['GRU'],Cargo,Wide-Body,2024-06-02,,,30,5,3.0,450.0,518
-LIM,['EZE'],Cargo,Narrow-Body,2024-06-08,,,20,3,1.8,108.0,519
-SCL,['LIM'],Passenger,Narrow-Body,2024-06-08,,,6,3,1.5,27.0,520
-MIA,['MEX'],Cargo,Narrow-Body,2024-06-06,,,20,3,1.8,108.0,521
-MIA,['LIM'],Passenger,Narrow-Body,2024-06-04,,,6,3,1.5,27.0,522
-EZE,"['LIM', 'GRU']",Cargo,Wide-Body,2024-06-12,,,30,5,3.0,450.0,523
-LIM,['MEX'],Passenger,Wide-Body,2024-06-10,,,13,4,2.5,130.0,524
-GRU,['BOG'],Passenger,Wide-Body,2024-06-10,,,13,4,2.5,130.0,525
-MEX,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-06-10,,,6,3,1.5,27.0,526
-SCL,['LIM'],Cargo,Narrow-Body,2024-06-13,,,20,3,1.8,108.0,527
-MIA,['EZE'],Cargo,Wide-Body,2024-06-10,,,30,5,3.0,450.0,528
-SCL,"['LIM', 'EZE']",Cargo,Narrow-Body,2024-06-11,,,20,3,1.8,108.0,529
-MEX,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-06-15,,,6,3,1.5,27.0,530
-EZE,['GRU'],Passenger,Wide-Body,2024-06-12,,,13,4,2.5,130.0,531
-MIA,['LIM'],Cargo,Wide-Body,2024-06-14,,,30,5,3.0,450.0,532
-MIA,['LIM'],Passenger,Narrow-Body,2024-06-09,,,6,3,1.5,27.0,533
-MEX,['BOG'],Passenger,Narrow-Body,2024-06-11,,,6,3,1.5,27.0,534
-SCL,['MIA'],Cargo,Narrow-Body,2024-06-11,,,20,3,1.8,108.0,535
-EZE,['GRU'],Passenger,Wide-Body,2024-06-11,,,13,4,2.5,130.0,536
-MIA,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-06-11,,,20,3,1.8,108.0,537
-MEX,['BOG'],Cargo,Narrow-Body,2024-06-13,,,20,3,1.8,108.0,538
-GRU,['BOG'],Passenger,Narrow-Body,2024-06-12,,,6,3,1.5,27.0,539
-LIM,"['EZE', 'GRU']",Cargo,Wide-Body,2024-06-14,,,30,5,3.0,450.0,540
-LIM,['MEX'],Passenger,Narrow-Body,2024-06-11,,,6,3,1.5,27.0,541
-SCL,['GRU'],Cargo,Narrow-Body,2024-06-09,,,20,3,1.8,108.0,542
-MEX,['MIA'],Cargo,Narrow-Body,2024-06-10,,,20,3,1.8,108.0,543
-GRU,['EZE'],Passenger,Narrow-Body,2024-06-09,,,6,3,1.5,27.0,544
-BOG,['GRU'],Cargo,Narrow-Body,2024-06-17,,,20,3,1.8,108.0,545
-MEX,"['GRU', 'EZE']",Passenger,Wide-Body,2024-06-17,,,13,4,2.5,130.0,546
-MEX,['EZE'],Passenger,Narrow-Body,2024-06-17,,,6,3,1.5,27.0,547
-LIM,['MIA'],Passenger,Narrow-Body,2024-06-20,,,6,3,1.5,27.0,548
-MIA,"['LIM', 'MEX', 'EZE']",Cargo,Narrow-Body,2024-06-18,,,20,3,1.8,108.0,549
-MIA,['EZE'],Passenger,Narrow-Body,2024-06-21,,,6,3,1.5,27.0,550
-EZE,['BOG'],Cargo,Wide-Body,2024-06-22,,,30,5,3.0,450.0,551
-SCL,"['EZE', 'GRU']",Cargo,Narrow-Body,2024-06-16,,,20,3,1.8,108.0,552
-EZE,"['LIM', 'SCL']",Passenger,Narrow-Body,2024-06-17,,,6,3,1.5,27.0,553
-EZE,['GRU'],Cargo,Narrow-Body,2024-06-19,,,20,3,1.8,108.0,554
-LIM,['MEX'],Cargo,Narrow-Body,2024-06-18,,,20,3,1.8,108.0,555
-MEX,['GRU'],Cargo,Narrow-Body,2024-06-18,,,20,3,1.8,108.0,556
-MEX,"['MIA', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-06-16,,,20,3,1.8,108.0,557
-MIA,['LIM'],Passenger,Narrow-Body,2024-06-17,,,6,3,1.5,27.0,558
-EZE,"['MEX', 'BOG', 'MIA']",Cargo,Narrow-Body,2024-06-22,,,20,3,1.8,108.0,559
-BOG,['GRU'],Cargo,Narrow-Body,2024-06-18,,,20,3,1.8,108.0,560
-EZE,"['MIA', 'LIM']",Passenger,Wide-Body,2024-06-21,,,13,4,2.5,130.0,561
-MEX,['GRU'],Passenger,Narrow-Body,2024-06-21,,,6,3,1.5,27.0,562
-MEX,['SCL'],Passenger,Narrow-Body,2024-06-22,,,6,3,1.5,27.0,563
-SCL,['MIA'],Cargo,Narrow-Body,2024-06-21,,,20,3,1.8,108.0,564
-EZE,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-06-22,,,20,3,1.8,108.0,565
-MEX,"['LIM', 'BOG']",Cargo,Narrow-Body,2024-06-21,,,20,3,1.8,108.0,566
-EZE,"['SCL', 'MEX']",Cargo,Narrow-Body,2024-06-17,,,20,3,1.8,108.0,567
-GRU,['BOG'],Passenger,Narrow-Body,2024-06-23,,,6,3,1.5,27.0,568
-EZE,['BOG'],Cargo,Narrow-Body,2024-06-24,,,20,3,1.8,108.0,569
-EZE,['MIA'],Cargo,Wide-Body,2024-06-27,,,30,5,3.0,450.0,570
-SCL,['LIM'],Passenger,Narrow-Body,2024-06-23,,,6,3,1.5,27.0,571
-MEX,['EZE'],Passenger,Narrow-Body,2024-06-27,,,6,3,1.5,27.0,572
-MEX,['MIA'],Cargo,Narrow-Body,2024-06-26,,,20,3,1.8,108.0,573
-EZE,"['GRU', 'SCL']",Cargo,Narrow-Body,2024-06-26,,,20,3,1.8,108.0,574
-MIA,"['LIM', 'MEX', 'EZE']",Passenger,Narrow-Body,2024-06-29,,,6,3,1.5,27.0,575
-MIA,"['MEX', 'SCL']",Cargo,Narrow-Body,2024-06-24,,,20,3,1.8,108.0,576
-GRU,"['MIA', 'LIM']",Passenger,Narrow-Body,2024-06-25,,,6,3,1.5,27.0,577
-EZE,['LIM'],Passenger,Wide-Body,2024-06-23,,,13,4,2.5,130.0,578
-LIM,"['EZE', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-06-25,,,6,3,1.5,27.0,579
-SCL,['BOG'],Cargo,Narrow-Body,2024-06-28,,,20,3,1.8,108.0,580
-EZE,['MIA'],Cargo,Narrow-Body,2024-06-24,,,20,3,1.8,108.0,581
-SCL,['MEX'],Cargo,Narrow-Body,2024-06-28,,,20,3,1.8,108.0,582
-BOG,"['GRU', 'MEX']",Passenger,Wide-Body,2024-06-29,,,13,4,2.5,130.0,583
-MEX,['MIA'],Passenger,Wide-Body,2024-06-26,,,13,4,2.5,130.0,584
-SCL,['LIM'],Cargo,Narrow-Body,2024-06-29,,,20,3,1.8,108.0,585
-GRU,['SCL'],Cargo,Wide-Body,2024-06-27,,,30,5,3.0,450.0,586
-EZE,['MIA'],Passenger,Narrow-Body,2024-06-29,,,6,3,1.5,27.0,587
-MIA,['EZE'],Passenger,Narrow-Body,2024-06-24,,,6,3,1.5,27.0,588
-MIA,['MEX'],Cargo,Narrow-Body,2024-07-03,,,20,3,1.8,108.0,589
-LIM,['SCL'],Cargo,Narrow-Body,2024-06-30,,,20,3,1.8,108.0,590
-GRU,"['LIM', 'EZE', 'MIA']",Cargo,Wide-Body,2024-07-05,,,30,5,3.0,450.0,591
-BOG,['MEX'],Cargo,Wide-Body,2024-06-30,,,30,5,3.0,450.0,592
-SCL,"['EZE', 'MEX', 'BOG']",Cargo,Narrow-Body,2024-06-30,,,20,3,1.8,108.0,593
-LIM,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-07-01,,,20,3,1.8,108.0,594
-MIA,['SCL'],Cargo,Narrow-Body,2024-06-30,,,20,3,1.8,108.0,595
-EZE,['MIA'],Cargo,Narrow-Body,2024-07-01,,,20,3,1.8,108.0,596
-LIM,['BOG'],Cargo,Narrow-Body,2024-07-04,,,20,3,1.8,108.0,597
-MEX,"['EZE', 'LIM']",Cargo,Narrow-Body,2024-07-02,,,20,3,1.8,108.0,598
-MIA,['MEX'],Cargo,Wide-Body,2024-07-05,,,30,5,3.0,450.0,599
-MEX,['EZE'],Cargo,Wide-Body,2024-07-01,,,30,5,3.0,450.0,600
-MEX,['GRU'],Cargo,Narrow-Body,2024-07-02,,,20,3,1.8,108.0,601
-BOG,['MIA'],Cargo,Narrow-Body,2024-07-04,,,20,3,1.8,108.0,602
-MEX,['BOG'],Cargo,Narrow-Body,2024-07-02,,,20,3,1.8,108.0,603
-EZE,['MEX'],Passenger,Wide-Body,2024-07-01,,,13,4,2.5,130.0,604
-BOG,"['SCL', 'MEX', 'GRU']",Passenger,Wide-Body,2024-07-04,,,13,4,2.5,130.0,605
-BOG,['LIM'],Cargo,Narrow-Body,2024-07-02,,,20,3,1.8,108.0,606
-MEX,['MIA'],Passenger,Narrow-Body,2024-07-06,,,6,3,1.5,27.0,607
-MEX,['LIM'],Cargo,Narrow-Body,2024-07-06,,,20,3,1.8,108.0,608
-BOG,['EZE'],Passenger,Narrow-Body,2024-06-30,,,6,3,1.5,27.0,609
+SCL,"['MIA', 'GRU', 'LIM']",Passenger,Narrow-Body,2024-01-13,5000,5.0,6,3,1.5,27.0,1
+SCL,['GRU'],Passenger,Wide-Body,2024-01-11,7500,7.5,13,4,2.5,130.0,2
+MIA,['LIM'],Cargo,Narrow-Body,2024-01-11,5000,6.0,20,3,1.8,108.0,3
+MEX,['GRU'],Cargo,Wide-Body,2024-01-11,7500,10.0,30,5,3.0,450.0,4
+MEX,['LIM'],Passenger,Narrow-Body,2024-01-08,5000,5.0,6,3,1.5,27.0,5
+MEX,['GRU'],Passenger,Narrow-Body,2024-01-09,5000,5.0,6,3,1.5,27.0,6
+EZE,"['LIM', 'GRU']",Cargo,Narrow-Body,2024-01-13,5000,6.0,20,3,1.8,108.0,7
+EZE,['MEX'],Cargo,Narrow-Body,2024-01-10,5000,6.0,20,3,1.8,108.0,8
+GRU,['MEX'],Passenger,Narrow-Body,2024-01-08,5000,5.0,6,3,1.5,27.0,9
+BOG,['LIM'],Passenger,Narrow-Body,2024-01-12,5000,5.0,6,3,1.5,27.0,10
+MEX,['LIM'],Passenger,Narrow-Body,2024-01-07,5000,5.0,6,3,1.5,27.0,11
+MEX,['GRU'],Cargo,Narrow-Body,2024-01-11,5000,6.0,20,3,1.8,108.0,12
+GRU,"['MEX', 'SCL']",Cargo,Wide-Body,2024-01-10,7500,10.0,30,5,3.0,450.0,13
+EZE,"['GRU', 'MIA', 'MEX']",Cargo,Narrow-Body,2024-01-08,5000,6.0,20,3,1.8,108.0,14
+MEX,"['MIA', 'BOG']",Cargo,Narrow-Body,2024-01-11,5000,6.0,20,3,1.8,108.0,15
+BOG,"['MEX', 'EZE', 'MIA']",Passenger,Narrow-Body,2024-01-08,5000,5.0,6,3,1.5,27.0,16
+LIM,['MIA'],Passenger,Narrow-Body,2024-01-13,5000,5.0,6,3,1.5,27.0,17
+BOG,"['MIA', 'EZE']",Passenger,Wide-Body,2024-01-10,7500,7.5,13,4,2.5,130.0,18
+MEX,"['LIM', 'EZE']",Cargo,Wide-Body,2024-01-07,7500,10.0,30,5,3.0,450.0,19
+LIM,['SCL'],Passenger,Wide-Body,2024-01-08,7500,7.5,13,4,2.5,130.0,20
+MEX,['MIA'],Passenger,Narrow-Body,2024-01-12,5000,5.0,6,3,1.5,27.0,21
+EZE,['GRU'],Cargo,Narrow-Body,2024-01-07,5000,6.0,20,3,1.8,108.0,22
+SCL,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-01-12,5000,5.0,6,3,1.5,27.0,23
+LIM,['GRU'],Passenger,Wide-Body,2024-01-11,7500,7.5,13,4,2.5,130.0,24
+BOG,['MEX'],Cargo,Narrow-Body,2024-01-14,5000,6.0,20,3,1.8,108.0,25
+BOG,"['GRU', 'MEX', 'LIM']",Cargo,Narrow-Body,2024-01-19,5000,6.0,20,3,1.8,108.0,26
+MIA,['EZE'],Passenger,Narrow-Body,2024-01-16,5000,5.0,6,3,1.5,27.0,27
+SCL,"['MEX', 'EZE', 'LIM']",Passenger,Narrow-Body,2024-01-19,5000,5.0,6,3,1.5,27.0,28
+MIA,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-01-17,5000,5.0,6,3,1.5,27.0,29
+LIM,"['EZE', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-01-20,5000,6.0,20,3,1.8,108.0,30
+LIM,['SCL'],Passenger,Wide-Body,2024-01-14,7500,7.5,13,4,2.5,130.0,31
+BOG,['MEX'],Cargo,Narrow-Body,2024-01-14,5000,6.0,20,3,1.8,108.0,32
+LIM,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-01-14,5000,6.0,20,3,1.8,108.0,33
+MIA,['SCL'],Passenger,Narrow-Body,2024-01-15,5000,5.0,6,3,1.5,27.0,34
+SCL,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-01-19,5000,5.0,6,3,1.5,27.0,35
+MIA,['SCL'],Cargo,Narrow-Body,2024-01-16,5000,6.0,20,3,1.8,108.0,36
+SCL,"['MEX', 'GRU', 'LIM']",Cargo,Narrow-Body,2024-01-19,5000,6.0,20,3,1.8,108.0,37
+EZE,['MIA'],Cargo,Narrow-Body,2024-01-17,5000,6.0,20,3,1.8,108.0,38
+MEX,['MIA'],Passenger,Narrow-Body,2024-01-16,5000,5.0,6,3,1.5,27.0,39
+EZE,['GRU'],Cargo,Wide-Body,2024-01-15,7500,10.0,30,5,3.0,450.0,40
+MIA,['MEX'],Cargo,Narrow-Body,2024-01-18,5000,6.0,20,3,1.8,108.0,41
+EZE,"['SCL', 'MEX']",Cargo,Narrow-Body,2024-01-20,5000,6.0,20,3,1.8,108.0,42
+EZE,['BOG'],Cargo,Narrow-Body,2024-01-18,5000,6.0,20,3,1.8,108.0,43
+MIA,['EZE'],Cargo,Narrow-Body,2024-01-14,5000,6.0,20,3,1.8,108.0,44
+LIM,"['EZE', 'BOG']",Passenger,Narrow-Body,2024-01-20,5000,5.0,6,3,1.5,27.0,45
+EZE,"['LIM', 'MIA']",Cargo,Narrow-Body,2024-01-14,5000,6.0,20,3,1.8,108.0,46
+LIM,['EZE'],Cargo,Wide-Body,2024-01-24,7500,10.0,30,5,3.0,450.0,47
+MEX,['LIM'],Cargo,Narrow-Body,2024-01-22,5000,6.0,20,3,1.8,108.0,48
+EZE,"['GRU', 'SCL']",Passenger,Wide-Body,2024-01-22,7500,7.5,13,4,2.5,130.0,49
+MIA,"['EZE', 'LIM']",Passenger,Narrow-Body,2024-01-22,5000,5.0,6,3,1.5,27.0,50
+MIA,['SCL'],Cargo,Narrow-Body,2024-01-23,5000,6.0,20,3,1.8,108.0,51
+GRU,['MIA'],Cargo,Narrow-Body,2024-01-26,5000,6.0,20,3,1.8,108.0,52
+EZE,"['GRU', 'SCL']",Passenger,Narrow-Body,2024-01-22,5000,5.0,6,3,1.5,27.0,53
+GRU,['LIM'],Passenger,Narrow-Body,2024-01-22,5000,5.0,6,3,1.5,27.0,54
+SCL,"['BOG', 'MEX']",Cargo,Narrow-Body,2024-01-27,5000,6.0,20,3,1.8,108.0,55
+EZE,['LIM'],Passenger,Narrow-Body,2024-01-22,5000,5.0,6,3,1.5,27.0,56
+EZE,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-01-27,5000,5.0,6,3,1.5,27.0,57
+SCL,['LIM'],Passenger,Narrow-Body,2024-01-24,5000,5.0,6,3,1.5,27.0,58
+SCL,['LIM'],Passenger,Narrow-Body,2024-01-26,5000,5.0,6,3,1.5,27.0,59
+GRU,"['MIA', 'SCL']",Cargo,Wide-Body,2024-01-25,7500,10.0,30,5,3.0,450.0,60
+MIA,['SCL'],Passenger,Narrow-Body,2024-01-25,5000,5.0,6,3,1.5,27.0,61
+EZE,['SCL'],Passenger,Narrow-Body,2024-01-24,5000,5.0,6,3,1.5,27.0,62
+MEX,['LIM'],Cargo,Narrow-Body,2024-01-22,5000,6.0,20,3,1.8,108.0,63
+MEX,['GRU'],Passenger,Narrow-Body,2024-01-24,5000,5.0,6,3,1.5,27.0,64
+BOG,['EZE'],Passenger,Narrow-Body,2024-01-26,5000,5.0,6,3,1.5,27.0,65
+GRU,['LIM'],Passenger,Narrow-Body,2024-01-23,5000,5.0,6,3,1.5,27.0,66
+SCL,"['MIA', 'LIM', 'GRU']",Cargo,Narrow-Body,2024-01-23,5000,6.0,20,3,1.8,108.0,67
+EZE,['GRU'],Passenger,Narrow-Body,2024-01-31,5000,5.0,6,3,1.5,27.0,68
+MEX,['EZE'],Passenger,Narrow-Body,2024-02-02,5000,5.0,6,3,1.5,27.0,69
+EZE,"['MIA', 'BOG', 'GRU']",Cargo,Narrow-Body,2024-01-31,5000,6.0,20,3,1.8,108.0,70
+MEX,"['BOG', 'SCL', 'LIM']",Passenger,Wide-Body,2024-01-30,7500,7.5,13,4,2.5,130.0,71
+GRU,['BOG'],Passenger,Narrow-Body,2024-02-02,5000,5.0,6,3,1.5,27.0,72
+EZE,['LIM'],Passenger,Wide-Body,2024-02-03,7500,7.5,13,4,2.5,130.0,73
+MEX,"['BOG', 'MIA', 'SCL']",Passenger,Narrow-Body,2024-01-31,5000,5.0,6,3,1.5,27.0,74
+LIM,['MEX'],Passenger,Narrow-Body,2024-01-29,5000,5.0,6,3,1.5,27.0,75
+GRU,['MIA'],Passenger,Narrow-Body,2024-01-31,5000,5.0,6,3,1.5,27.0,76
+MEX,"['GRU', 'MIA', 'LIM']",Cargo,Narrow-Body,2024-02-03,5000,6.0,20,3,1.8,108.0,77
+SCL,['LIM'],Passenger,Wide-Body,2024-01-31,7500,7.5,13,4,2.5,130.0,78
+LIM,['MEX'],Passenger,Wide-Body,2024-01-29,7500,7.5,13,4,2.5,130.0,79
+EZE,['MIA'],Passenger,Narrow-Body,2024-01-29,5000,5.0,6,3,1.5,27.0,80
+LIM,['MIA'],Cargo,Narrow-Body,2024-01-31,5000,6.0,20,3,1.8,108.0,81
+EZE,['MEX'],Passenger,Narrow-Body,2024-01-29,5000,5.0,6,3,1.5,27.0,82
+EZE,['LIM'],Cargo,Narrow-Body,2024-01-28,5000,6.0,20,3,1.8,108.0,83
+MIA,['LIM'],Cargo,Narrow-Body,2024-02-04,5000,6.0,20,3,1.8,108.0,84
+LIM,['GRU'],Passenger,Narrow-Body,2024-02-07,5000,5.0,6,3,1.5,27.0,85
+MIA,"['EZE', 'LIM']",Passenger,Narrow-Body,2024-02-10,5000,5.0,6,3,1.5,27.0,86
+SCL,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-02-04,5000,6.0,20,3,1.8,108.0,87
+EZE,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-02-06,5000,5.0,6,3,1.5,27.0,88
+GRU,['MEX'],Passenger,Narrow-Body,2024-02-04,5000,5.0,6,3,1.5,27.0,89
+EZE,['BOG'],Passenger,Wide-Body,2024-02-04,7500,7.5,13,4,2.5,130.0,90
+MIA,"['SCL', 'LIM']",Cargo,Narrow-Body,2024-02-04,5000,6.0,20,3,1.8,108.0,91
+MIA,['MEX'],Cargo,Narrow-Body,2024-02-05,5000,6.0,20,3,1.8,108.0,92
+MEX,['EZE'],Passenger,Narrow-Body,2024-02-05,5000,5.0,6,3,1.5,27.0,93
+EZE,['BOG'],Passenger,Narrow-Body,2024-02-07,5000,5.0,6,3,1.5,27.0,94
+LIM,['MIA'],Passenger,Narrow-Body,2024-02-10,5000,5.0,6,3,1.5,27.0,95
+MEX,['EZE'],Passenger,Narrow-Body,2024-02-06,5000,5.0,6,3,1.5,27.0,96
+EZE,['BOG'],Cargo,Wide-Body,2024-02-07,7500,10.0,30,5,3.0,450.0,97
+EZE,['GRU'],Passenger,Narrow-Body,2024-02-05,5000,5.0,6,3,1.5,27.0,98
+EZE,['MIA'],Passenger,Narrow-Body,2024-02-10,5000,5.0,6,3,1.5,27.0,99
+SCL,"['MIA', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-02-06,5000,6.0,20,3,1.8,108.0,100
+MIA,['LIM'],Cargo,Narrow-Body,2024-02-04,5000,6.0,20,3,1.8,108.0,101
+MEX,['LIM'],Cargo,Narrow-Body,2024-02-09,5000,6.0,20,3,1.8,108.0,102
+MEX,['MIA'],Cargo,Narrow-Body,2024-02-07,5000,6.0,20,3,1.8,108.0,103
+MEX,"['EZE', 'LIM', 'SCL']",Passenger,Narrow-Body,2024-02-09,5000,5.0,6,3,1.5,27.0,104
+BOG,['MEX'],Cargo,Narrow-Body,2024-02-07,5000,6.0,20,3,1.8,108.0,105
+SCL,['MIA'],Cargo,Narrow-Body,2024-02-06,5000,6.0,20,3,1.8,108.0,106
+EZE,['MIA'],Cargo,Wide-Body,2024-02-06,7500,10.0,30,5,3.0,450.0,107
+GRU,['SCL'],Cargo,Narrow-Body,2024-02-09,5000,6.0,20,3,1.8,108.0,108
+MIA,['EZE'],Passenger,Wide-Body,2024-02-04,7500,7.5,13,4,2.5,130.0,109
+MEX,"['LIM', 'EZE', 'SCL']",Cargo,Narrow-Body,2024-02-08,5000,6.0,20,3,1.8,108.0,110
+LIM,"['MIA', 'MEX']",Cargo,Wide-Body,2024-02-05,7500,10.0,30,5,3.0,450.0,111
+MIA,"['LIM', 'SCL', 'MEX']",Cargo,Wide-Body,2024-02-05,7500,10.0,30,5,3.0,450.0,112
+BOG,['MEX'],Cargo,Wide-Body,2024-02-07,7500,10.0,30,5,3.0,450.0,113
+LIM,['EZE'],Cargo,Narrow-Body,2024-02-10,5000,6.0,20,3,1.8,108.0,114
+GRU,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-02-09,5000,5.0,6,3,1.5,27.0,115
+MEX,['MIA'],Cargo,Narrow-Body,2024-02-14,5000,6.0,20,3,1.8,108.0,116
+EZE,"['LIM', 'MIA', 'MEX']",Passenger,Wide-Body,2024-02-13,7500,7.5,13,4,2.5,130.0,117
+BOG,"['LIM', 'EZE', 'MIA']",Cargo,Narrow-Body,2024-02-16,5000,6.0,20,3,1.8,108.0,118
+BOG,['GRU'],Passenger,Narrow-Body,2024-02-17,5000,5.0,6,3,1.5,27.0,119
+MEX,"['GRU', 'SCL']",Passenger,Narrow-Body,2024-02-16,5000,5.0,6,3,1.5,27.0,120
+SCL,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-02-14,5000,6.0,20,3,1.8,108.0,121
+GRU,['MEX'],Passenger,Narrow-Body,2024-02-13,5000,5.0,6,3,1.5,27.0,122
+GRU,['MIA'],Passenger,Narrow-Body,2024-02-12,5000,5.0,6,3,1.5,27.0,123
+MEX,"['LIM', 'EZE', 'BOG']",Passenger,Wide-Body,2024-02-12,7500,7.5,13,4,2.5,130.0,124
+MIA,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-02-15,5000,6.0,20,3,1.8,108.0,125
+MEX,['GRU'],Passenger,Narrow-Body,2024-02-15,5000,5.0,6,3,1.5,27.0,126
+EZE,"['MIA', 'SCL']",Passenger,Narrow-Body,2024-02-13,5000,5.0,6,3,1.5,27.0,127
+LIM,['MIA'],Cargo,Narrow-Body,2024-02-17,5000,6.0,20,3,1.8,108.0,128
+MIA,['GRU'],Cargo,Narrow-Body,2024-02-17,5000,6.0,20,3,1.8,108.0,129
+GRU,['LIM'],Cargo,Narrow-Body,2024-02-17,5000,6.0,20,3,1.8,108.0,130
+SCL,['GRU'],Passenger,Narrow-Body,2024-02-12,5000,5.0,6,3,1.5,27.0,131
+MIA,['EZE'],Passenger,Wide-Body,2024-02-11,7500,7.5,13,4,2.5,130.0,132
+EZE,['SCL'],Cargo,Narrow-Body,2024-02-15,5000,6.0,20,3,1.8,108.0,133
+LIM,"['MEX', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-02-17,5000,5.0,6,3,1.5,27.0,134
+EZE,['MIA'],Passenger,Narrow-Body,2024-02-14,5000,5.0,6,3,1.5,27.0,135
+MIA,"['EZE', 'MEX']",Cargo,Narrow-Body,2024-02-11,5000,6.0,20,3,1.8,108.0,136
+MEX,['GRU'],Passenger,Narrow-Body,2024-02-11,5000,5.0,6,3,1.5,27.0,137
+MEX,['EZE'],Passenger,Wide-Body,2024-02-13,7500,7.5,13,4,2.5,130.0,138
+EZE,"['MEX', 'SCL', 'LIM']",Passenger,Narrow-Body,2024-02-11,5000,5.0,6,3,1.5,27.0,139
+MEX,['GRU'],Passenger,Narrow-Body,2024-02-17,5000,5.0,6,3,1.5,27.0,140
+MIA,['MEX'],Passenger,Narrow-Body,2024-02-22,5000,5.0,6,3,1.5,27.0,141
+GRU,['SCL'],Cargo,Narrow-Body,2024-02-20,5000,6.0,20,3,1.8,108.0,142
+BOG,['LIM'],Passenger,Narrow-Body,2024-02-18,5000,5.0,6,3,1.5,27.0,143
+LIM,['EZE'],Passenger,Narrow-Body,2024-02-24,5000,5.0,6,3,1.5,27.0,144
+MEX,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-02-20,5000,5.0,6,3,1.5,27.0,145
+MEX,['GRU'],Cargo,Wide-Body,2024-02-23,7500,10.0,30,5,3.0,450.0,146
+LIM,"['MIA', 'SCL']",Cargo,Narrow-Body,2024-02-21,5000,6.0,20,3,1.8,108.0,147
+MEX,"['GRU', 'LIM', 'EZE']",Passenger,Wide-Body,2024-02-19,7500,7.5,13,4,2.5,130.0,148
+EZE,"['GRU', 'LIM']",Passenger,Narrow-Body,2024-02-23,5000,5.0,6,3,1.5,27.0,149
+EZE,['MEX'],Cargo,Narrow-Body,2024-02-22,5000,6.0,20,3,1.8,108.0,150
+EZE,['GRU'],Cargo,Narrow-Body,2024-02-21,5000,6.0,20,3,1.8,108.0,151
+GRU,['MEX'],Cargo,Narrow-Body,2024-02-23,5000,6.0,20,3,1.8,108.0,152
+EZE,['MIA'],Cargo,Narrow-Body,2024-02-20,5000,6.0,20,3,1.8,108.0,153
+EZE,['LIM'],Cargo,Narrow-Body,2024-02-23,5000,6.0,20,3,1.8,108.0,154
+MEX,['GRU'],Cargo,Narrow-Body,2024-02-24,5000,6.0,20,3,1.8,108.0,155
+SCL,['BOG'],Cargo,Narrow-Body,2024-02-24,5000,6.0,20,3,1.8,108.0,156
+BOG,['EZE'],Passenger,Narrow-Body,2024-02-22,5000,5.0,6,3,1.5,27.0,157
+LIM,['GRU'],Passenger,Narrow-Body,2024-02-23,5000,5.0,6,3,1.5,27.0,158
+EZE,['SCL'],Cargo,Narrow-Body,2024-02-20,5000,6.0,20,3,1.8,108.0,159
+GRU,['MEX'],Passenger,Narrow-Body,2024-02-24,5000,5.0,6,3,1.5,27.0,160
+SCL,['EZE'],Passenger,Narrow-Body,2024-02-19,5000,5.0,6,3,1.5,27.0,161
+EZE,['LIM'],Passenger,Wide-Body,2024-02-21,7500,7.5,13,4,2.5,130.0,162
+EZE,['LIM'],Cargo,Narrow-Body,2024-02-22,5000,6.0,20,3,1.8,108.0,163
+GRU,['SCL'],Cargo,Wide-Body,2024-02-21,7500,10.0,30,5,3.0,450.0,164
+MEX,"['MIA', 'SCL']",Cargo,Wide-Body,2024-02-19,7500,10.0,30,5,3.0,450.0,165
+EZE,['BOG'],Passenger,Wide-Body,2024-02-20,7500,7.5,13,4,2.5,130.0,166
+EZE,"['MEX', 'LIM', 'GRU']",Passenger,Narrow-Body,2024-02-20,5000,5.0,6,3,1.5,27.0,167
+LIM,['MEX'],Cargo,Narrow-Body,2024-02-21,5000,6.0,20,3,1.8,108.0,168
+EZE,['MIA'],Cargo,Narrow-Body,2024-02-20,5000,6.0,20,3,1.8,108.0,169
+EZE,['MEX'],Cargo,Narrow-Body,2024-02-21,5000,6.0,20,3,1.8,108.0,170
+MEX,['EZE'],Cargo,Narrow-Body,2024-02-23,5000,6.0,20,3,1.8,108.0,171
+MEX,['MIA'],Passenger,Narrow-Body,2024-02-23,5000,5.0,6,3,1.5,27.0,172
+MIA,['EZE'],Cargo,Narrow-Body,2024-02-20,5000,6.0,20,3,1.8,108.0,173
+LIM,"['BOG', 'GRU']",Passenger,Wide-Body,2024-02-21,7500,7.5,13,4,2.5,130.0,174
+BOG,"['MEX', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-02-27,5000,5.0,6,3,1.5,27.0,175
+GRU,['EZE'],Passenger,Narrow-Body,2024-02-26,5000,5.0,6,3,1.5,27.0,176
+LIM,['BOG'],Passenger,Narrow-Body,2024-02-26,5000,5.0,6,3,1.5,27.0,177
+GRU,['BOG'],Cargo,Wide-Body,2024-02-29,7500,10.0,30,5,3.0,450.0,178
+GRU,['MEX'],Cargo,Wide-Body,2024-02-26,7500,10.0,30,5,3.0,450.0,179
+EZE,['LIM'],Passenger,Narrow-Body,2024-02-26,5000,5.0,6,3,1.5,27.0,180
+EZE,"['GRU', 'BOG']",Cargo,Wide-Body,2024-02-26,7500,10.0,30,5,3.0,450.0,181
+GRU,['LIM'],Cargo,Narrow-Body,2024-03-01,5000,6.0,20,3,1.8,108.0,182
+SCL,['EZE'],Passenger,Narrow-Body,2024-03-01,5000,5.0,6,3,1.5,27.0,183
+GRU,['SCL'],Passenger,Wide-Body,2024-02-27,7500,7.5,13,4,2.5,130.0,184
+SCL,['LIM'],Passenger,Wide-Body,2024-02-28,7500,7.5,13,4,2.5,130.0,185
+SCL,"['EZE', 'MEX']",Cargo,Narrow-Body,2024-02-27,5000,6.0,20,3,1.8,108.0,186
+LIM,['SCL'],Passenger,Narrow-Body,2024-03-02,5000,5.0,6,3,1.5,27.0,187
+GRU,"['LIM', 'MEX', 'MIA']",Passenger,Wide-Body,2024-02-27,7500,7.5,13,4,2.5,130.0,188
+GRU,['MIA'],Cargo,Narrow-Body,2024-03-01,5000,6.0,20,3,1.8,108.0,189
+MEX,['GRU'],Passenger,Wide-Body,2024-02-27,7500,7.5,13,4,2.5,130.0,190
+LIM,['MIA'],Passenger,Narrow-Body,2024-02-27,5000,5.0,6,3,1.5,27.0,191
+MIA,['BOG'],Cargo,Wide-Body,2024-02-28,7500,10.0,30,5,3.0,450.0,192
+MEX,['SCL'],Passenger,Narrow-Body,2024-02-26,5000,5.0,6,3,1.5,27.0,193
+EZE,['LIM'],Cargo,Wide-Body,2024-03-01,7500,10.0,30,5,3.0,450.0,194
+EZE,['BOG'],Cargo,Wide-Body,2024-03-01,7500,10.0,30,5,3.0,450.0,195
+SCL,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-02-28,5000,6.0,20,3,1.8,108.0,196
+LIM,['GRU'],Cargo,Narrow-Body,2024-03-02,5000,6.0,20,3,1.8,108.0,197
+SCL,"['LIM', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-03-02,5000,5.0,6,3,1.5,27.0,198
+GRU,['LIM'],Passenger,Narrow-Body,2024-03-01,5000,5.0,6,3,1.5,27.0,199
+MEX,['BOG'],Passenger,Narrow-Body,2024-02-28,5000,5.0,6,3,1.5,27.0,200
+SCL,['MEX'],Cargo,Narrow-Body,2024-03-06,5000,6.0,20,3,1.8,108.0,201
+LIM,['GRU'],Cargo,Narrow-Body,2024-03-06,5000,6.0,20,3,1.8,108.0,202
+MEX,"['GRU', 'LIM']",Passenger,Narrow-Body,2024-03-07,5000,5.0,6,3,1.5,27.0,203
+LIM,"['MIA', 'EZE']",Cargo,Narrow-Body,2024-03-04,5000,6.0,20,3,1.8,108.0,204
+MEX,['BOG'],Passenger,Wide-Body,2024-03-09,7500,7.5,13,4,2.5,130.0,205
+MIA,"['SCL', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-03-09,5000,6.0,20,3,1.8,108.0,206
+EZE,"['MEX', 'LIM', 'SCL']",Cargo,Wide-Body,2024-03-08,7500,10.0,30,5,3.0,450.0,207
+SCL,['GRU'],Passenger,Narrow-Body,2024-03-04,5000,5.0,6,3,1.5,27.0,208
+MEX,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-03-04,5000,5.0,6,3,1.5,27.0,209
+LIM,['MIA'],Cargo,Narrow-Body,2024-03-04,5000,6.0,20,3,1.8,108.0,210
+SCL,['LIM'],Cargo,Narrow-Body,2024-03-04,5000,6.0,20,3,1.8,108.0,211
+LIM,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-04,5000,5.0,6,3,1.5,27.0,212
+EZE,['GRU'],Passenger,Narrow-Body,2024-03-08,5000,5.0,6,3,1.5,27.0,213
+EZE,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-03-03,5000,5.0,6,3,1.5,27.0,214
+SCL,['GRU'],Passenger,Narrow-Body,2024-03-06,5000,5.0,6,3,1.5,27.0,215
+LIM,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-09,5000,5.0,6,3,1.5,27.0,216
+GRU,['LIM'],Cargo,Wide-Body,2024-03-03,7500,10.0,30,5,3.0,450.0,217
+BOG,['SCL'],Passenger,Wide-Body,2024-03-03,7500,7.5,13,4,2.5,130.0,218
+GRU,['BOG'],Passenger,Narrow-Body,2024-03-08,5000,5.0,6,3,1.5,27.0,219
+MIA,['LIM'],Cargo,Wide-Body,2024-03-05,7500,10.0,30,5,3.0,450.0,220
+BOG,['LIM'],Passenger,Narrow-Body,2024-03-06,5000,5.0,6,3,1.5,27.0,221
+GRU,['LIM'],Passenger,Wide-Body,2024-03-13,7500,7.5,13,4,2.5,130.0,222
+MEX,"['MIA', 'EZE', 'GRU']",Passenger,Wide-Body,2024-03-14,7500,7.5,13,4,2.5,130.0,223
+MIA,"['LIM', 'BOG']",Passenger,Narrow-Body,2024-03-12,5000,5.0,6,3,1.5,27.0,224
+LIM,['MEX'],Cargo,Narrow-Body,2024-03-15,5000,6.0,20,3,1.8,108.0,225
+MIA,['MEX'],Cargo,Narrow-Body,2024-03-14,5000,6.0,20,3,1.8,108.0,226
+MEX,['GRU'],Cargo,Narrow-Body,2024-03-13,5000,6.0,20,3,1.8,108.0,227
+SCL,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-03-12,5000,5.0,6,3,1.5,27.0,228
+SCL,"['EZE', 'MEX']",Passenger,Narrow-Body,2024-03-15,5000,5.0,6,3,1.5,27.0,229
+MEX,['SCL'],Cargo,Wide-Body,2024-03-13,7500,10.0,30,5,3.0,450.0,230
+SCL,['LIM'],Passenger,Wide-Body,2024-03-15,7500,7.5,13,4,2.5,130.0,231
+EZE,['MEX'],Cargo,Narrow-Body,2024-03-12,5000,6.0,20,3,1.8,108.0,232
+SCL,['BOG'],Passenger,Narrow-Body,2024-03-15,5000,5.0,6,3,1.5,27.0,233
+EZE,['LIM'],Cargo,Narrow-Body,2024-03-15,5000,6.0,20,3,1.8,108.0,234
+MIA,['BOG'],Cargo,Wide-Body,2024-03-15,7500,10.0,30,5,3.0,450.0,235
+BOG,['LIM'],Cargo,Narrow-Body,2024-03-16,5000,6.0,20,3,1.8,108.0,236
+EZE,"['SCL', 'MIA', 'BOG']",Cargo,Narrow-Body,2024-03-14,5000,6.0,20,3,1.8,108.0,237
+MEX,"['BOG', 'EZE']",Passenger,Narrow-Body,2024-03-11,5000,5.0,6,3,1.5,27.0,238
+MIA,['MEX'],Passenger,Narrow-Body,2024-03-15,5000,5.0,6,3,1.5,27.0,239
+MEX,['EZE'],Passenger,Wide-Body,2024-03-11,7500,7.5,13,4,2.5,130.0,240
+MEX,['BOG'],Cargo,Narrow-Body,2024-03-15,5000,6.0,20,3,1.8,108.0,241
+MIA,"['MEX', 'EZE']",Passenger,Narrow-Body,2024-03-11,5000,5.0,6,3,1.5,27.0,242
+LIM,"['EZE', 'MIA']",Passenger,Narrow-Body,2024-03-17,5000,5.0,6,3,1.5,27.0,243
+MEX,"['LIM', 'SCL']",Passenger,Narrow-Body,2024-03-18,5000,5.0,6,3,1.5,27.0,244
+GRU,['MEX'],Cargo,Narrow-Body,2024-03-20,5000,6.0,20,3,1.8,108.0,245
+GRU,['SCL'],Cargo,Wide-Body,2024-03-21,7500,10.0,30,5,3.0,450.0,246
+LIM,"['SCL', 'EZE', 'MEX']",Passenger,Wide-Body,2024-03-20,7500,7.5,13,4,2.5,130.0,247
+SCL,['LIM'],Passenger,Wide-Body,2024-03-21,7500,7.5,13,4,2.5,130.0,248
+MEX,['EZE'],Passenger,Narrow-Body,2024-03-19,5000,5.0,6,3,1.5,27.0,249
+EZE,['MEX'],Cargo,Narrow-Body,2024-03-19,5000,6.0,20,3,1.8,108.0,250
+MEX,['EZE'],Cargo,Narrow-Body,2024-03-21,5000,6.0,20,3,1.8,108.0,251
+MEX,['LIM'],Cargo,Narrow-Body,2024-03-21,5000,6.0,20,3,1.8,108.0,252
+GRU,"['EZE', 'LIM']",Cargo,Wide-Body,2024-03-22,7500,10.0,30,5,3.0,450.0,253
+MIA,['MEX'],Passenger,Wide-Body,2024-03-17,7500,7.5,13,4,2.5,130.0,254
+EZE,['SCL'],Passenger,Wide-Body,2024-03-23,7500,7.5,13,4,2.5,130.0,255
+GRU,['MEX'],Cargo,Narrow-Body,2024-03-20,5000,6.0,20,3,1.8,108.0,256
+EZE,['LIM'],Passenger,Wide-Body,2024-03-19,7500,7.5,13,4,2.5,130.0,257
+EZE,"['SCL', 'LIM', 'MEX']",Cargo,Narrow-Body,2024-03-18,5000,6.0,20,3,1.8,108.0,258
+MEX,['MIA'],Cargo,Narrow-Body,2024-03-21,5000,6.0,20,3,1.8,108.0,259
+EZE,['MIA'],Cargo,Narrow-Body,2024-03-23,5000,6.0,20,3,1.8,108.0,260
+EZE,"['GRU', 'MEX']",Passenger,Wide-Body,2024-03-23,7500,7.5,13,4,2.5,130.0,261
+GRU,['MIA'],Passenger,Narrow-Body,2024-03-18,5000,5.0,6,3,1.5,27.0,262
+GRU,['MIA'],Cargo,Narrow-Body,2024-03-20,5000,6.0,20,3,1.8,108.0,263
+SCL,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-03-21,5000,5.0,6,3,1.5,27.0,264
+BOG,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-03-17,5000,5.0,6,3,1.5,27.0,265
+MIA,['GRU'],Cargo,Narrow-Body,2024-03-20,5000,6.0,20,3,1.8,108.0,266
+GRU,['SCL'],Cargo,Narrow-Body,2024-03-23,5000,6.0,20,3,1.8,108.0,267
+BOG,"['LIM', 'GRU', 'MEX']",Passenger,Narrow-Body,2024-03-19,5000,5.0,6,3,1.5,27.0,268
+SCL,"['LIM', 'MIA', 'BOG']",Cargo,Wide-Body,2024-03-21,7500,10.0,30,5,3.0,450.0,269
+GRU,['LIM'],Passenger,Wide-Body,2024-03-26,7500,7.5,13,4,2.5,130.0,270
+MEX,['EZE'],Cargo,Narrow-Body,2024-03-28,5000,6.0,20,3,1.8,108.0,271
+LIM,['EZE'],Cargo,Narrow-Body,2024-03-26,5000,6.0,20,3,1.8,108.0,272
+GRU,['BOG'],Cargo,Narrow-Body,2024-03-29,5000,6.0,20,3,1.8,108.0,273
+MIA,['EZE'],Passenger,Narrow-Body,2024-03-24,5000,5.0,6,3,1.5,27.0,274
+SCL,"['EZE', 'GRU']",Passenger,Narrow-Body,2024-03-26,5000,5.0,6,3,1.5,27.0,275
+MIA,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-03-26,5000,6.0,20,3,1.8,108.0,276
+SCL,['GRU'],Cargo,Narrow-Body,2024-03-27,5000,6.0,20,3,1.8,108.0,277
+LIM,['EZE'],Cargo,Narrow-Body,2024-03-26,5000,6.0,20,3,1.8,108.0,278
+MEX,['MIA'],Cargo,Narrow-Body,2024-03-25,5000,6.0,20,3,1.8,108.0,279
+MEX,['LIM'],Passenger,Narrow-Body,2024-03-25,5000,5.0,6,3,1.5,27.0,280
+LIM,['EZE'],Passenger,Narrow-Body,2024-03-30,5000,5.0,6,3,1.5,27.0,281
+LIM,"['GRU', 'MEX']",Passenger,Narrow-Body,2024-03-29,5000,5.0,6,3,1.5,27.0,282
+MEX,['MIA'],Passenger,Narrow-Body,2024-03-24,5000,5.0,6,3,1.5,27.0,283
+MEX,"['GRU', 'EZE']",Passenger,Narrow-Body,2024-03-26,5000,5.0,6,3,1.5,27.0,284
+LIM,['MIA'],Passenger,Narrow-Body,2024-03-28,5000,5.0,6,3,1.5,27.0,285
+EZE,['MIA'],Cargo,Wide-Body,2024-03-30,7500,10.0,30,5,3.0,450.0,286
+SCL,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-03-26,5000,6.0,20,3,1.8,108.0,287
+SCL,['LIM'],Cargo,Narrow-Body,2024-03-26,5000,6.0,20,3,1.8,108.0,288
+MEX,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-03-24,5000,6.0,20,3,1.8,108.0,289
+GRU,['LIM'],Passenger,Narrow-Body,2024-03-28,5000,5.0,6,3,1.5,27.0,290
+SCL,['LIM'],Passenger,Wide-Body,2024-03-27,7500,7.5,13,4,2.5,130.0,291
+BOG,['MEX'],Passenger,Narrow-Body,2024-03-30,5000,5.0,6,3,1.5,27.0,292
+LIM,['MIA'],Passenger,Narrow-Body,2024-04-03,5000,5.0,6,3,1.5,27.0,293
+EZE,['GRU'],Cargo,Wide-Body,2024-04-06,7500,10.0,30,5,3.0,450.0,294
+EZE,['SCL'],Passenger,Narrow-Body,2024-04-04,5000,5.0,6,3,1.5,27.0,295
+LIM,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-04-02,5000,5.0,6,3,1.5,27.0,296
+LIM,['MEX'],Cargo,Narrow-Body,2024-03-31,5000,6.0,20,3,1.8,108.0,297
+EZE,"['MIA', 'GRU']",Cargo,Narrow-Body,2024-04-01,5000,6.0,20,3,1.8,108.0,298
+LIM,['MEX'],Passenger,Wide-Body,2024-04-04,7500,7.5,13,4,2.5,130.0,299
+SCL,"['MIA', 'MEX', 'BOG']",Passenger,Wide-Body,2024-03-31,7500,7.5,13,4,2.5,130.0,300
+LIM,['GRU'],Cargo,Wide-Body,2024-04-02,7500,10.0,30,5,3.0,450.0,301
+MEX,['LIM'],Passenger,Narrow-Body,2024-04-05,5000,5.0,6,3,1.5,27.0,302
+LIM,['MIA'],Cargo,Wide-Body,2024-04-01,7500,10.0,30,5,3.0,450.0,303
+BOG,['MIA'],Passenger,Wide-Body,2024-04-04,7500,7.5,13,4,2.5,130.0,304
+MIA,['MEX'],Passenger,Narrow-Body,2024-03-31,5000,5.0,6,3,1.5,27.0,305
+EZE,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-03-31,5000,5.0,6,3,1.5,27.0,306
+EZE,['MIA'],Passenger,Narrow-Body,2024-04-03,5000,5.0,6,3,1.5,27.0,307
+LIM,['SCL'],Passenger,Narrow-Body,2024-04-04,5000,5.0,6,3,1.5,27.0,308
+SCL,"['BOG', 'EZE']",Passenger,Narrow-Body,2024-04-02,5000,5.0,6,3,1.5,27.0,309
+MEX,['SCL'],Passenger,Narrow-Body,2024-04-05,5000,5.0,6,3,1.5,27.0,310
+LIM,"['GRU', 'BOG']",Passenger,Narrow-Body,2024-04-04,5000,5.0,6,3,1.5,27.0,311
+BOG,['SCL'],Cargo,Narrow-Body,2024-04-02,5000,6.0,20,3,1.8,108.0,312
+MEX,['EZE'],Passenger,Wide-Body,2024-04-05,7500,7.5,13,4,2.5,130.0,313
+MEX,"['GRU', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-04-06,5000,5.0,6,3,1.5,27.0,314
+EZE,['GRU'],Passenger,Narrow-Body,2024-04-01,5000,5.0,6,3,1.5,27.0,315
+MEX,['MIA'],Passenger,Wide-Body,2024-04-03,7500,7.5,13,4,2.5,130.0,316
+EZE,['MIA'],Passenger,Narrow-Body,2024-04-01,5000,5.0,6,3,1.5,27.0,317
+MEX,['LIM'],Passenger,Narrow-Body,2024-04-03,5000,5.0,6,3,1.5,27.0,318
+LIM,['MIA'],Passenger,Wide-Body,2024-04-01,7500,7.5,13,4,2.5,130.0,319
+MEX,['GRU'],Passenger,Narrow-Body,2024-04-13,5000,5.0,6,3,1.5,27.0,320
+EZE,['MEX'],Passenger,Narrow-Body,2024-04-10,5000,5.0,6,3,1.5,27.0,321
+GRU,['BOG'],Cargo,Narrow-Body,2024-04-07,5000,6.0,20,3,1.8,108.0,322
+GRU,['MIA'],Cargo,Narrow-Body,2024-04-07,5000,6.0,20,3,1.8,108.0,323
+MIA,['GRU'],Passenger,Narrow-Body,2024-04-13,5000,5.0,6,3,1.5,27.0,324
+MIA,['GRU'],Passenger,Narrow-Body,2024-04-08,5000,5.0,6,3,1.5,27.0,325
+MEX,['EZE'],Cargo,Narrow-Body,2024-04-09,5000,6.0,20,3,1.8,108.0,326
+LIM,['MIA'],Passenger,Narrow-Body,2024-04-09,5000,5.0,6,3,1.5,27.0,327
+EZE,"['SCL', 'GRU', 'MIA']",Passenger,Narrow-Body,2024-04-12,5000,5.0,6,3,1.5,27.0,328
+MEX,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-04-07,5000,5.0,6,3,1.5,27.0,329
+MEX,"['SCL', 'BOG']",Cargo,Wide-Body,2024-04-08,7500,10.0,30,5,3.0,450.0,330
+MEX,['LIM'],Cargo,Wide-Body,2024-04-09,7500,10.0,30,5,3.0,450.0,331
+EZE,['MIA'],Cargo,Narrow-Body,2024-04-09,5000,6.0,20,3,1.8,108.0,332
+GRU,"['MEX', 'MIA']",Cargo,Narrow-Body,2024-04-11,5000,6.0,20,3,1.8,108.0,333
+SCL,"['MEX', 'BOG']",Passenger,Narrow-Body,2024-04-11,5000,5.0,6,3,1.5,27.0,334
+MEX,['MIA'],Passenger,Narrow-Body,2024-04-10,5000,5.0,6,3,1.5,27.0,335
+LIM,"['MEX', 'GRU', 'EZE']",Cargo,Narrow-Body,2024-04-09,5000,6.0,20,3,1.8,108.0,336
+EZE,"['MEX', 'GRU']",Passenger,Narrow-Body,2024-04-07,5000,5.0,6,3,1.5,27.0,337
+SCL,"['EZE', 'LIM', 'MEX']",Passenger,Narrow-Body,2024-04-07,5000,5.0,6,3,1.5,27.0,338
+GRU,"['EZE', 'SCL']",Cargo,Wide-Body,2024-04-12,7500,10.0,30,5,3.0,450.0,339
+MIA,"['MEX', 'EZE', 'SCL']",Cargo,Narrow-Body,2024-04-09,5000,6.0,20,3,1.8,108.0,340
+LIM,['MEX'],Passenger,Narrow-Body,2024-04-18,5000,5.0,6,3,1.5,27.0,341
+EZE,"['GRU', 'LIM']",Cargo,Narrow-Body,2024-04-16,5000,6.0,20,3,1.8,108.0,342
+BOG,['EZE'],Cargo,Narrow-Body,2024-04-14,5000,6.0,20,3,1.8,108.0,343
+MIA,['EZE'],Passenger,Narrow-Body,2024-04-16,5000,5.0,6,3,1.5,27.0,344
+SCL,['GRU'],Cargo,Narrow-Body,2024-04-18,5000,6.0,20,3,1.8,108.0,345
+MEX,"['SCL', 'LIM', 'BOG']",Passenger,Narrow-Body,2024-04-14,5000,5.0,6,3,1.5,27.0,346
+MEX,['GRU'],Passenger,Narrow-Body,2024-04-16,5000,5.0,6,3,1.5,27.0,347
+LIM,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-04-14,5000,5.0,6,3,1.5,27.0,348
+MEX,['LIM'],Passenger,Narrow-Body,2024-04-15,5000,5.0,6,3,1.5,27.0,349
+MIA,['LIM'],Cargo,Narrow-Body,2024-04-19,5000,6.0,20,3,1.8,108.0,350
+GRU,['MIA'],Passenger,Narrow-Body,2024-04-19,5000,5.0,6,3,1.5,27.0,351
+BOG,['MIA'],Passenger,Narrow-Body,2024-04-17,5000,5.0,6,3,1.5,27.0,352
+MIA,['GRU'],Cargo,Narrow-Body,2024-04-18,5000,6.0,20,3,1.8,108.0,353
+EZE,['MIA'],Passenger,Narrow-Body,2024-04-17,5000,5.0,6,3,1.5,27.0,354
+EZE,"['LIM', 'MIA', 'MEX']",Cargo,Narrow-Body,2024-04-19,5000,6.0,20,3,1.8,108.0,355
+EZE,"['MIA', 'LIM']",Cargo,Narrow-Body,2024-04-17,5000,6.0,20,3,1.8,108.0,356
+SCL,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-04-17,5000,5.0,6,3,1.5,27.0,357
+LIM,['SCL'],Passenger,Wide-Body,2024-04-17,7500,7.5,13,4,2.5,130.0,358
+BOG,"['LIM', 'MIA', 'EZE']",Cargo,Narrow-Body,2024-04-16,5000,6.0,20,3,1.8,108.0,359
+BOG,['LIM'],Passenger,Narrow-Body,2024-04-14,5000,5.0,6,3,1.5,27.0,360
+BOG,['SCL'],Passenger,Narrow-Body,2024-04-15,5000,5.0,6,3,1.5,27.0,361
+MIA,"['GRU', 'MEX', 'EZE']",Passenger,Wide-Body,2024-04-20,7500,7.5,13,4,2.5,130.0,362
+MEX,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-04-16,5000,6.0,20,3,1.8,108.0,363
+BOG,['MIA'],Passenger,Narrow-Body,2024-04-20,5000,5.0,6,3,1.5,27.0,364
+LIM,['SCL'],Passenger,Wide-Body,2024-04-14,7500,7.5,13,4,2.5,130.0,365
+MEX,"['LIM', 'GRU']",Cargo,Wide-Body,2024-04-14,7500,10.0,30,5,3.0,450.0,366
+GRU,['EZE'],Passenger,Narrow-Body,2024-04-15,5000,5.0,6,3,1.5,27.0,367
+MEX,['BOG'],Cargo,Narrow-Body,2024-04-17,5000,6.0,20,3,1.8,108.0,368
+MEX,['GRU'],Passenger,Narrow-Body,2024-04-19,5000,5.0,6,3,1.5,27.0,369
+MEX,"['EZE', 'GRU']",Cargo,Narrow-Body,2024-04-20,5000,6.0,20,3,1.8,108.0,370
+LIM,"['BOG', 'MEX']",Cargo,Wide-Body,2024-04-18,7500,10.0,30,5,3.0,450.0,371
+EZE,['MEX'],Cargo,Wide-Body,2024-04-20,7500,10.0,30,5,3.0,450.0,372
+EZE,['MIA'],Cargo,Narrow-Body,2024-04-23,5000,6.0,20,3,1.8,108.0,373
+LIM,['GRU'],Passenger,Wide-Body,2024-04-25,7500,7.5,13,4,2.5,130.0,374
+EZE,['GRU'],Passenger,Narrow-Body,2024-04-25,5000,5.0,6,3,1.5,27.0,375
+MIA,"['EZE', 'MEX', 'LIM']",Cargo,Narrow-Body,2024-04-26,5000,6.0,20,3,1.8,108.0,376
+SCL,['BOG'],Cargo,Narrow-Body,2024-04-21,5000,6.0,20,3,1.8,108.0,377
+MEX,"['SCL', 'GRU']",Cargo,Narrow-Body,2024-04-25,5000,6.0,20,3,1.8,108.0,378
+MEX,['SCL'],Cargo,Narrow-Body,2024-04-27,5000,6.0,20,3,1.8,108.0,379
+MEX,['MIA'],Passenger,Narrow-Body,2024-04-22,5000,5.0,6,3,1.5,27.0,380
+SCL,"['EZE', 'GRU']",Passenger,Narrow-Body,2024-04-22,5000,5.0,6,3,1.5,27.0,381
+EZE,"['MIA', 'MEX']",Passenger,Narrow-Body,2024-04-21,5000,5.0,6,3,1.5,27.0,382
+EZE,['MEX'],Passenger,Wide-Body,2024-04-27,7500,7.5,13,4,2.5,130.0,383
+LIM,"['GRU', 'MEX']",Cargo,Wide-Body,2024-04-25,7500,10.0,30,5,3.0,450.0,384
+SCL,['MIA'],Cargo,Wide-Body,2024-04-26,7500,10.0,30,5,3.0,450.0,385
+GRU,['BOG'],Passenger,Narrow-Body,2024-04-24,5000,5.0,6,3,1.5,27.0,386
+GRU,['EZE'],Cargo,Narrow-Body,2024-04-23,5000,6.0,20,3,1.8,108.0,387
+EZE,['MEX'],Cargo,Narrow-Body,2024-04-25,5000,6.0,20,3,1.8,108.0,388
+SCL,['LIM'],Passenger,Narrow-Body,2024-04-22,5000,5.0,6,3,1.5,27.0,389
+GRU,['EZE'],Passenger,Wide-Body,2024-04-26,7500,7.5,13,4,2.5,130.0,390
+EZE,"['GRU', 'BOG']",Passenger,Wide-Body,2024-04-25,7500,7.5,13,4,2.5,130.0,391
+MIA,['MEX'],Passenger,Narrow-Body,2024-04-25,5000,5.0,6,3,1.5,27.0,392
+EZE,['GRU'],Passenger,Narrow-Body,2024-04-23,5000,5.0,6,3,1.5,27.0,393
+MEX,['MIA'],Cargo,Narrow-Body,2024-05-01,5000,6.0,20,3,1.8,108.0,394
+BOG,['EZE'],Passenger,Narrow-Body,2024-04-28,5000,5.0,6,3,1.5,27.0,395
+GRU,['MIA'],Passenger,Narrow-Body,2024-05-04,5000,5.0,6,3,1.5,27.0,396
+EZE,"['GRU', 'SCL', 'MEX']",Cargo,Narrow-Body,2024-05-02,5000,6.0,20,3,1.8,108.0,397
+MEX,['EZE'],Cargo,Narrow-Body,2024-05-03,5000,6.0,20,3,1.8,108.0,398
+EZE,['GRU'],Passenger,Narrow-Body,2024-04-30,5000,5.0,6,3,1.5,27.0,399
+EZE,"['MEX', 'BOG']",Passenger,Narrow-Body,2024-04-29,5000,5.0,6,3,1.5,27.0,400
+LIM,['MEX'],Passenger,Narrow-Body,2024-05-01,5000,5.0,6,3,1.5,27.0,401
+SCL,['GRU'],Passenger,Wide-Body,2024-04-28,7500,7.5,13,4,2.5,130.0,402
+MEX,['BOG'],Passenger,Narrow-Body,2024-05-02,5000,5.0,6,3,1.5,27.0,403
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-03,5000,5.0,6,3,1.5,27.0,404
+MEX,['LIM'],Passenger,Narrow-Body,2024-04-29,5000,5.0,6,3,1.5,27.0,405
+EZE,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-04-30,5000,6.0,20,3,1.8,108.0,406
+MIA,"['LIM', 'MEX']",Cargo,Wide-Body,2024-04-29,7500,10.0,30,5,3.0,450.0,407
+LIM,['GRU'],Passenger,Narrow-Body,2024-05-04,5000,5.0,6,3,1.5,27.0,408
+MEX,"['EZE', 'MIA']",Cargo,Narrow-Body,2024-05-02,5000,6.0,20,3,1.8,108.0,409
+EZE,['MIA'],Cargo,Wide-Body,2024-05-01,7500,10.0,30,5,3.0,450.0,410
+EZE,['LIM'],Passenger,Narrow-Body,2024-05-05,5000,5.0,6,3,1.5,27.0,411
+LIM,['BOG'],Passenger,Narrow-Body,2024-05-07,5000,5.0,6,3,1.5,27.0,412
+EZE,['GRU'],Passenger,Narrow-Body,2024-05-08,5000,5.0,6,3,1.5,27.0,413
+BOG,"['SCL', 'LIM', 'MEX']",Passenger,Narrow-Body,2024-05-10,5000,5.0,6,3,1.5,27.0,414
+MEX,"['LIM', 'EZE', 'BOG']",Cargo,Narrow-Body,2024-05-05,5000,6.0,20,3,1.8,108.0,415
+EZE,"['LIM', 'GRU']",Passenger,Narrow-Body,2024-05-10,5000,5.0,6,3,1.5,27.0,416
+EZE,['GRU'],Passenger,Narrow-Body,2024-05-08,5000,5.0,6,3,1.5,27.0,417
+MIA,"['GRU', 'MEX']",Cargo,Narrow-Body,2024-05-09,5000,6.0,20,3,1.8,108.0,418
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-11,5000,5.0,6,3,1.5,27.0,419
+GRU,['MIA'],Cargo,Narrow-Body,2024-05-07,5000,6.0,20,3,1.8,108.0,420
+SCL,['EZE'],Passenger,Narrow-Body,2024-05-05,5000,5.0,6,3,1.5,27.0,421
+MEX,"['BOG', 'GRU', 'EZE']",Cargo,Narrow-Body,2024-05-09,5000,6.0,20,3,1.8,108.0,422
+MEX,['MIA'],Passenger,Narrow-Body,2024-05-07,5000,5.0,6,3,1.5,27.0,423
+MIA,"['EZE', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-05-10,5000,6.0,20,3,1.8,108.0,424
+LIM,['BOG'],Cargo,Wide-Body,2024-05-09,7500,10.0,30,5,3.0,450.0,425
+GRU,['MIA'],Passenger,Narrow-Body,2024-05-08,5000,5.0,6,3,1.5,27.0,426
+EZE,['MEX'],Cargo,Narrow-Body,2024-05-11,5000,6.0,20,3,1.8,108.0,427
+EZE,"['MEX', 'SCL', 'MIA']",Cargo,Narrow-Body,2024-05-09,5000,6.0,20,3,1.8,108.0,428
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-10,5000,5.0,6,3,1.5,27.0,429
+GRU,"['MEX', 'SCL', 'MIA']",Cargo,Narrow-Body,2024-05-09,5000,6.0,20,3,1.8,108.0,430
+EZE,"['MIA', 'BOG', 'MEX']",Cargo,Narrow-Body,2024-05-07,5000,6.0,20,3,1.8,108.0,431
+MIA,['BOG'],Cargo,Wide-Body,2024-05-07,7500,10.0,30,5,3.0,450.0,432
+EZE,['MIA'],Cargo,Wide-Body,2024-05-18,7500,10.0,30,5,3.0,450.0,433
+MIA,['EZE'],Passenger,Narrow-Body,2024-05-15,5000,5.0,6,3,1.5,27.0,434
+LIM,"['SCL', 'MEX', 'BOG']",Cargo,Wide-Body,2024-05-17,7500,10.0,30,5,3.0,450.0,435
+GRU,['MIA'],Passenger,Narrow-Body,2024-05-18,5000,5.0,6,3,1.5,27.0,436
+LIM,['EZE'],Cargo,Narrow-Body,2024-05-13,5000,6.0,20,3,1.8,108.0,437
+GRU,['SCL'],Passenger,Narrow-Body,2024-05-13,5000,5.0,6,3,1.5,27.0,438
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-16,5000,5.0,6,3,1.5,27.0,439
+EZE,"['BOG', 'GRU']",Passenger,Narrow-Body,2024-05-16,5000,5.0,6,3,1.5,27.0,440
+LIM,['GRU'],Cargo,Narrow-Body,2024-05-14,5000,6.0,20,3,1.8,108.0,441
+SCL,['MIA'],Cargo,Wide-Body,2024-05-16,7500,10.0,30,5,3.0,450.0,442
+LIM,"['BOG', 'EZE', 'GRU']",Cargo,Wide-Body,2024-05-18,7500,10.0,30,5,3.0,450.0,443
+MEX,"['EZE', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-05-16,5000,5.0,6,3,1.5,27.0,444
+GRU,['EZE'],Passenger,Narrow-Body,2024-05-14,5000,5.0,6,3,1.5,27.0,445
+LIM,"['MEX', 'MIA']",Passenger,Narrow-Body,2024-05-15,5000,5.0,6,3,1.5,27.0,446
+MIA,['LIM'],Passenger,Narrow-Body,2024-05-12,5000,5.0,6,3,1.5,27.0,447
+MEX,"['LIM', 'EZE']",Passenger,Narrow-Body,2024-05-15,5000,5.0,6,3,1.5,27.0,448
+MIA,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-05-13,5000,6.0,20,3,1.8,108.0,449
+LIM,['EZE'],Cargo,Wide-Body,2024-05-18,7500,10.0,30,5,3.0,450.0,450
+MEX,"['GRU', 'EZE']",Cargo,Narrow-Body,2024-05-17,5000,6.0,20,3,1.8,108.0,451
+SCL,['GRU'],Cargo,Narrow-Body,2024-05-13,5000,6.0,20,3,1.8,108.0,452
+BOG,['MIA'],Cargo,Narrow-Body,2024-05-18,5000,6.0,20,3,1.8,108.0,453
+SCL,"['GRU', 'MEX']",Passenger,Narrow-Body,2024-05-13,5000,5.0,6,3,1.5,27.0,454
+EZE,['MEX'],Cargo,Narrow-Body,2024-05-13,5000,6.0,20,3,1.8,108.0,455
+EZE,['BOG'],Cargo,Narrow-Body,2024-05-12,5000,6.0,20,3,1.8,108.0,456
+EZE,['LIM'],Passenger,Narrow-Body,2024-05-16,5000,5.0,6,3,1.5,27.0,457
+SCL,"['LIM', 'MEX']",Passenger,Wide-Body,2024-05-15,7500,7.5,13,4,2.5,130.0,458
+GRU,"['MIA', 'EZE']",Passenger,Narrow-Body,2024-05-21,5000,5.0,6,3,1.5,27.0,459
+MIA,['LIM'],Cargo,Wide-Body,2024-05-25,7500,10.0,30,5,3.0,450.0,460
+MEX,['SCL'],Cargo,Narrow-Body,2024-05-23,5000,6.0,20,3,1.8,108.0,461
+SCL,['MEX'],Passenger,Narrow-Body,2024-05-23,5000,5.0,6,3,1.5,27.0,462
+MIA,['LIM'],Passenger,Narrow-Body,2024-05-22,5000,5.0,6,3,1.5,27.0,463
+LIM,['MEX'],Passenger,Narrow-Body,2024-05-21,5000,5.0,6,3,1.5,27.0,464
+SCL,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-05-23,5000,6.0,20,3,1.8,108.0,465
+EZE,['BOG'],Cargo,Narrow-Body,2024-05-22,5000,6.0,20,3,1.8,108.0,466
+MIA,"['MEX', 'GRU']",Passenger,Narrow-Body,2024-05-25,5000,5.0,6,3,1.5,27.0,467
+EZE,['MEX'],Passenger,Wide-Body,2024-05-20,7500,7.5,13,4,2.5,130.0,468
+MEX,['LIM'],Passenger,Narrow-Body,2024-05-21,5000,5.0,6,3,1.5,27.0,469
+LIM,['EZE'],Cargo,Narrow-Body,2024-05-19,5000,6.0,20,3,1.8,108.0,470
+MEX,"['BOG', 'MIA']",Passenger,Narrow-Body,2024-05-19,5000,5.0,6,3,1.5,27.0,471
+LIM,['BOG'],Passenger,Wide-Body,2024-05-23,7500,7.5,13,4,2.5,130.0,472
+SCL,['GRU'],Cargo,Narrow-Body,2024-05-20,5000,6.0,20,3,1.8,108.0,473
+SCL,['BOG'],Cargo,Narrow-Body,2024-05-25,5000,6.0,20,3,1.8,108.0,474
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-22,5000,5.0,6,3,1.5,27.0,475
+MIA,['MEX'],Passenger,Narrow-Body,2024-05-22,5000,5.0,6,3,1.5,27.0,476
+MIA,"['EZE', 'SCL']",Cargo,Narrow-Body,2024-05-23,5000,6.0,20,3,1.8,108.0,477
+BOG,['GRU'],Cargo,Narrow-Body,2024-05-21,5000,6.0,20,3,1.8,108.0,478
+MEX,['SCL'],Cargo,Narrow-Body,2024-05-23,5000,6.0,20,3,1.8,108.0,479
+GRU,"['LIM', 'MEX']",Cargo,Wide-Body,2024-05-31,7500,10.0,30,5,3.0,450.0,480
+MEX,"['EZE', 'BOG']",Passenger,Narrow-Body,2024-05-31,5000,5.0,6,3,1.5,27.0,481
+EZE,['LIM'],Cargo,Wide-Body,2024-05-27,7500,10.0,30,5,3.0,450.0,482
+EZE,['MEX'],Passenger,Narrow-Body,2024-05-28,5000,5.0,6,3,1.5,27.0,483
+BOG,['GRU'],Passenger,Narrow-Body,2024-05-30,5000,5.0,6,3,1.5,27.0,484
+MIA,['EZE'],Passenger,Narrow-Body,2024-05-30,5000,5.0,6,3,1.5,27.0,485
+MIA,['LIM'],Cargo,Narrow-Body,2024-05-28,5000,6.0,20,3,1.8,108.0,486
+LIM,"['GRU', 'SCL', 'MIA']",Passenger,Wide-Body,2024-05-28,7500,7.5,13,4,2.5,130.0,487
+EZE,['MIA'],Cargo,Narrow-Body,2024-05-28,5000,6.0,20,3,1.8,108.0,488
+BOG,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-05-30,5000,6.0,20,3,1.8,108.0,489
+MEX,"['SCL', 'LIM', 'MIA']",Passenger,Narrow-Body,2024-05-26,5000,5.0,6,3,1.5,27.0,490
+EZE,['MIA'],Cargo,Wide-Body,2024-05-29,7500,10.0,30,5,3.0,450.0,491
+BOG,['SCL'],Cargo,Narrow-Body,2024-05-27,5000,6.0,20,3,1.8,108.0,492
+MIA,"['GRU', 'SCL']",Cargo,Narrow-Body,2024-05-29,5000,6.0,20,3,1.8,108.0,493
+LIM,"['MEX', 'MIA']",Cargo,Narrow-Body,2024-06-01,5000,6.0,20,3,1.8,108.0,494
+LIM,['EZE'],Cargo,Narrow-Body,2024-05-26,5000,6.0,20,3,1.8,108.0,495
+EZE,['SCL'],Cargo,Narrow-Body,2024-05-31,5000,6.0,20,3,1.8,108.0,496
+MEX,['EZE'],Passenger,Narrow-Body,2024-06-01,5000,5.0,6,3,1.5,27.0,497
+MEX,"['GRU', 'SCL', 'LIM']",Passenger,Narrow-Body,2024-05-28,5000,5.0,6,3,1.5,27.0,498
+EZE,"['SCL', 'MIA']",Passenger,Narrow-Body,2024-05-26,5000,5.0,6,3,1.5,27.0,499
+SCL,"['LIM', 'BOG']",Cargo,Wide-Body,2024-06-07,7500,10.0,30,5,3.0,450.0,500
+MEX,['LIM'],Passenger,Narrow-Body,2024-06-02,5000,5.0,6,3,1.5,27.0,501
+GRU,['MEX'],Cargo,Narrow-Body,2024-06-08,5000,6.0,20,3,1.8,108.0,502
+GRU,['MIA'],Passenger,Narrow-Body,2024-06-04,5000,5.0,6,3,1.5,27.0,503
+GRU,['LIM'],Passenger,Narrow-Body,2024-06-08,5000,5.0,6,3,1.5,27.0,504
+SCL,['MIA'],Passenger,Narrow-Body,2024-06-04,5000,5.0,6,3,1.5,27.0,505
+SCL,"['MEX', 'GRU']",Cargo,Wide-Body,2024-06-04,7500,10.0,30,5,3.0,450.0,506
+GRU,['LIM'],Passenger,Narrow-Body,2024-06-02,5000,5.0,6,3,1.5,27.0,507
+MEX,"['MIA', 'SCL']",Passenger,Wide-Body,2024-06-07,7500,7.5,13,4,2.5,130.0,508
+MEX,['MIA'],Cargo,Narrow-Body,2024-06-07,5000,6.0,20,3,1.8,108.0,509
+SCL,['MIA'],Passenger,Wide-Body,2024-06-07,7500,7.5,13,4,2.5,130.0,510
+EZE,"['MEX', 'MIA']",Passenger,Narrow-Body,2024-06-08,5000,5.0,6,3,1.5,27.0,511
+EZE,['MIA'],Cargo,Wide-Body,2024-06-07,7500,10.0,30,5,3.0,450.0,512
+SCL,['MIA'],Cargo,Wide-Body,2024-06-08,7500,10.0,30,5,3.0,450.0,513
+EZE,['GRU'],Passenger,Wide-Body,2024-06-07,7500,7.5,13,4,2.5,130.0,514
+EZE,"['LIM', 'MIA']",Passenger,Narrow-Body,2024-06-03,5000,5.0,6,3,1.5,27.0,515
+MEX,['BOG'],Cargo,Narrow-Body,2024-06-07,5000,6.0,20,3,1.8,108.0,516
+GRU,"['LIM', 'MEX', 'EZE']",Passenger,Wide-Body,2024-06-06,7500,7.5,13,4,2.5,130.0,517
+EZE,['GRU'],Cargo,Wide-Body,2024-06-02,7500,10.0,30,5,3.0,450.0,518
+LIM,['EZE'],Cargo,Narrow-Body,2024-06-08,5000,6.0,20,3,1.8,108.0,519
+SCL,['LIM'],Passenger,Narrow-Body,2024-06-08,5000,5.0,6,3,1.5,27.0,520
+MIA,['MEX'],Cargo,Narrow-Body,2024-06-06,5000,6.0,20,3,1.8,108.0,521
+MIA,['LIM'],Passenger,Narrow-Body,2024-06-04,5000,5.0,6,3,1.5,27.0,522
+EZE,"['LIM', 'GRU']",Cargo,Wide-Body,2024-06-12,7500,10.0,30,5,3.0,450.0,523
+LIM,['MEX'],Passenger,Wide-Body,2024-06-10,7500,7.5,13,4,2.5,130.0,524
+GRU,['BOG'],Passenger,Wide-Body,2024-06-10,7500,7.5,13,4,2.5,130.0,525
+MEX,"['GRU', 'MIA']",Passenger,Narrow-Body,2024-06-10,5000,5.0,6,3,1.5,27.0,526
+SCL,['LIM'],Cargo,Narrow-Body,2024-06-13,5000,6.0,20,3,1.8,108.0,527
+MIA,['EZE'],Cargo,Wide-Body,2024-06-10,7500,10.0,30,5,3.0,450.0,528
+SCL,"['LIM', 'EZE']",Cargo,Narrow-Body,2024-06-11,5000,6.0,20,3,1.8,108.0,529
+MEX,"['SCL', 'LIM']",Passenger,Narrow-Body,2024-06-15,5000,5.0,6,3,1.5,27.0,530
+EZE,['GRU'],Passenger,Wide-Body,2024-06-12,7500,7.5,13,4,2.5,130.0,531
+MIA,['LIM'],Cargo,Wide-Body,2024-06-14,7500,10.0,30,5,3.0,450.0,532
+MIA,['LIM'],Passenger,Narrow-Body,2024-06-09,5000,5.0,6,3,1.5,27.0,533
+MEX,['BOG'],Passenger,Narrow-Body,2024-06-11,5000,5.0,6,3,1.5,27.0,534
+SCL,['MIA'],Cargo,Narrow-Body,2024-06-11,5000,6.0,20,3,1.8,108.0,535
+EZE,['GRU'],Passenger,Wide-Body,2024-06-11,7500,7.5,13,4,2.5,130.0,536
+MIA,"['MEX', 'LIM']",Cargo,Narrow-Body,2024-06-11,5000,6.0,20,3,1.8,108.0,537
+MEX,['BOG'],Cargo,Narrow-Body,2024-06-13,5000,6.0,20,3,1.8,108.0,538
+GRU,['BOG'],Passenger,Narrow-Body,2024-06-12,5000,5.0,6,3,1.5,27.0,539
+LIM,"['EZE', 'GRU']",Cargo,Wide-Body,2024-06-14,7500,10.0,30,5,3.0,450.0,540
+LIM,['MEX'],Passenger,Narrow-Body,2024-06-11,5000,5.0,6,3,1.5,27.0,541
+SCL,['GRU'],Cargo,Narrow-Body,2024-06-09,5000,6.0,20,3,1.8,108.0,542
+MEX,['MIA'],Cargo,Narrow-Body,2024-06-10,5000,6.0,20,3,1.8,108.0,543
+GRU,['EZE'],Passenger,Narrow-Body,2024-06-09,5000,5.0,6,3,1.5,27.0,544
+BOG,['GRU'],Cargo,Narrow-Body,2024-06-17,5000,6.0,20,3,1.8,108.0,545
+MEX,"['GRU', 'EZE']",Passenger,Wide-Body,2024-06-17,7500,7.5,13,4,2.5,130.0,546
+MEX,['EZE'],Passenger,Narrow-Body,2024-06-17,5000,5.0,6,3,1.5,27.0,547
+LIM,['MIA'],Passenger,Narrow-Body,2024-06-20,5000,5.0,6,3,1.5,27.0,548
+MIA,"['LIM', 'MEX', 'EZE']",Cargo,Narrow-Body,2024-06-18,5000,6.0,20,3,1.8,108.0,549
+MIA,['EZE'],Passenger,Narrow-Body,2024-06-21,5000,5.0,6,3,1.5,27.0,550
+EZE,['BOG'],Cargo,Wide-Body,2024-06-22,7500,10.0,30,5,3.0,450.0,551
+SCL,"['EZE', 'GRU']",Cargo,Narrow-Body,2024-06-16,5000,6.0,20,3,1.8,108.0,552
+EZE,"['LIM', 'SCL']",Passenger,Narrow-Body,2024-06-17,5000,5.0,6,3,1.5,27.0,553
+EZE,['GRU'],Cargo,Narrow-Body,2024-06-19,5000,6.0,20,3,1.8,108.0,554
+LIM,['MEX'],Cargo,Narrow-Body,2024-06-18,5000,6.0,20,3,1.8,108.0,555
+MEX,['GRU'],Cargo,Narrow-Body,2024-06-18,5000,6.0,20,3,1.8,108.0,556
+MEX,"['MIA', 'EZE', 'LIM']",Cargo,Narrow-Body,2024-06-16,5000,6.0,20,3,1.8,108.0,557
+MIA,['LIM'],Passenger,Narrow-Body,2024-06-17,5000,5.0,6,3,1.5,27.0,558
+EZE,"['MEX', 'BOG', 'MIA']",Cargo,Narrow-Body,2024-06-22,5000,6.0,20,3,1.8,108.0,559
+BOG,['GRU'],Cargo,Narrow-Body,2024-06-18,5000,6.0,20,3,1.8,108.0,560
+EZE,"['MIA', 'LIM']",Passenger,Wide-Body,2024-06-21,7500,7.5,13,4,2.5,130.0,561
+MEX,['GRU'],Passenger,Narrow-Body,2024-06-21,5000,5.0,6,3,1.5,27.0,562
+MEX,['SCL'],Passenger,Narrow-Body,2024-06-22,5000,5.0,6,3,1.5,27.0,563
+SCL,['MIA'],Cargo,Narrow-Body,2024-06-21,5000,6.0,20,3,1.8,108.0,564
+EZE,"['LIM', 'MEX']",Cargo,Narrow-Body,2024-06-22,5000,6.0,20,3,1.8,108.0,565
+MEX,"['LIM', 'BOG']",Cargo,Narrow-Body,2024-06-21,5000,6.0,20,3,1.8,108.0,566
+EZE,"['SCL', 'MEX']",Cargo,Narrow-Body,2024-06-17,5000,6.0,20,3,1.8,108.0,567
+GRU,['BOG'],Passenger,Narrow-Body,2024-06-23,5000,5.0,6,3,1.5,27.0,568
+EZE,['BOG'],Cargo,Narrow-Body,2024-06-24,5000,6.0,20,3,1.8,108.0,569
+EZE,['MIA'],Cargo,Wide-Body,2024-06-27,7500,10.0,30,5,3.0,450.0,570
+SCL,['LIM'],Passenger,Narrow-Body,2024-06-23,5000,5.0,6,3,1.5,27.0,571
+MEX,['EZE'],Passenger,Narrow-Body,2024-06-27,5000,5.0,6,3,1.5,27.0,572
+MEX,['MIA'],Cargo,Narrow-Body,2024-06-26,5000,6.0,20,3,1.8,108.0,573
+EZE,"['GRU', 'SCL']",Cargo,Narrow-Body,2024-06-26,5000,6.0,20,3,1.8,108.0,574
+MIA,"['LIM', 'MEX', 'EZE']",Passenger,Narrow-Body,2024-06-29,5000,5.0,6,3,1.5,27.0,575
+MIA,"['MEX', 'SCL']",Cargo,Narrow-Body,2024-06-24,5000,6.0,20,3,1.8,108.0,576
+GRU,"['MIA', 'LIM']",Passenger,Narrow-Body,2024-06-25,5000,5.0,6,3,1.5,27.0,577
+EZE,['LIM'],Passenger,Wide-Body,2024-06-23,7500,7.5,13,4,2.5,130.0,578
+LIM,"['EZE', 'GRU', 'BOG']",Passenger,Narrow-Body,2024-06-25,5000,5.0,6,3,1.5,27.0,579
+SCL,['BOG'],Cargo,Narrow-Body,2024-06-28,5000,6.0,20,3,1.8,108.0,580
+EZE,['MIA'],Cargo,Narrow-Body,2024-06-24,5000,6.0,20,3,1.8,108.0,581
+SCL,['MEX'],Cargo,Narrow-Body,2024-06-28,5000,6.0,20,3,1.8,108.0,582
+BOG,"['GRU', 'MEX']",Passenger,Wide-Body,2024-06-29,7500,7.5,13,4,2.5,130.0,583
+MEX,['MIA'],Passenger,Wide-Body,2024-06-26,7500,7.5,13,4,2.5,130.0,584
+SCL,['LIM'],Cargo,Narrow-Body,2024-06-29,5000,6.0,20,3,1.8,108.0,585
+GRU,['SCL'],Cargo,Wide-Body,2024-06-27,7500,10.0,30,5,3.0,450.0,586
+EZE,['MIA'],Passenger,Narrow-Body,2024-06-29,5000,5.0,6,3,1.5,27.0,587
+MIA,['EZE'],Passenger,Narrow-Body,2024-06-24,5000,5.0,6,3,1.5,27.0,588
+MIA,['MEX'],Cargo,Narrow-Body,2024-07-03,5000,6.0,20,3,1.8,108.0,589
+LIM,['SCL'],Cargo,Narrow-Body,2024-06-30,5000,6.0,20,3,1.8,108.0,590
+GRU,"['LIM', 'EZE', 'MIA']",Cargo,Wide-Body,2024-07-05,7500,10.0,30,5,3.0,450.0,591
+BOG,['MEX'],Cargo,Wide-Body,2024-06-30,7500,10.0,30,5,3.0,450.0,592
+SCL,"['EZE', 'MEX', 'BOG']",Cargo,Narrow-Body,2024-06-30,5000,6.0,20,3,1.8,108.0,593
+LIM,"['MIA', 'MEX']",Cargo,Narrow-Body,2024-07-01,5000,6.0,20,3,1.8,108.0,594
+MIA,['SCL'],Cargo,Narrow-Body,2024-06-30,5000,6.0,20,3,1.8,108.0,595
+EZE,['MIA'],Cargo,Narrow-Body,2024-07-01,5000,6.0,20,3,1.8,108.0,596
+LIM,['BOG'],Cargo,Narrow-Body,2024-07-04,5000,6.0,20,3,1.8,108.0,597
+MEX,"['EZE', 'LIM']",Cargo,Narrow-Body,2024-07-02,5000,6.0,20,3,1.8,108.0,598
+MIA,['MEX'],Cargo,Wide-Body,2024-07-05,7500,10.0,30,5,3.0,450.0,599
+MEX,['EZE'],Cargo,Wide-Body,2024-07-01,7500,10.0,30,5,3.0,450.0,600
+MEX,['GRU'],Cargo,Narrow-Body,2024-07-02,5000,6.0,20,3,1.8,108.0,601
+BOG,['MIA'],Cargo,Narrow-Body,2024-07-04,5000,6.0,20,3,1.8,108.0,602
+MEX,['BOG'],Cargo,Narrow-Body,2024-07-02,5000,6.0,20,3,1.8,108.0,603
+EZE,['MEX'],Passenger,Wide-Body,2024-07-01,7500,7.5,13,4,2.5,130.0,604
+BOG,"['SCL', 'MEX', 'GRU']",Passenger,Wide-Body,2024-07-04,7500,7.5,13,4,2.5,130.0,605
+BOG,['LIM'],Cargo,Narrow-Body,2024-07-02,5000,6.0,20,3,1.8,108.0,606
+MEX,['MIA'],Passenger,Narrow-Body,2024-07-06,5000,5.0,6,3,1.5,27.0,607
+MEX,['LIM'],Cargo,Narrow-Body,2024-07-06,5000,6.0,20,3,1.8,108.0,608
+BOG,['EZE'],Passenger,Narrow-Body,2024-06-30,5000,5.0,6,3,1.5,27.0,609

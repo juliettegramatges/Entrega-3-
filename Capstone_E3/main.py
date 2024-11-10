@@ -4,8 +4,8 @@ import time
 import multiprocessing as mp
 import os
 import math
-import greedy
 import pandas as pd
+import csv
 
 import mpShims
 import optcgcons
@@ -26,19 +26,30 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
     # print()
 
     # a matrix for all consolidated in the tour: conjunto de items que se pueden consolidar en cada pallet
+    #  item tomará valor  -1 si se queda como item individual, -2 if a consollidated (packed), parte siendo un packed vacío
     consol = [
-                [ common.Item(-1, -2, 0, 0, 0, 0, 0, 0., -1, -1) # an empty consolidated
+                [ common.Item(-1, -2, 0, 0, 0, 0, 0., -1, -1) # an empty consolidated
                 for _ in tour.nodes ]
                 for _ in pallets # tour consolidated for each pallet
             ]
+    
+    # imprimo la matriz consol visualmente
+
+    print("Conjunto de items (Packed) vacíos en cada pallet creados para cada nodo")
+    print(f"Tour nodes: {tour.nodes}")
+    print(f"Pallets: {pallets}")
+    df_consol = pd.DataFrame(consol)
+    print(df_consol)
 
     k0 = len(tour.nodes)-1 # the base index on return
 
     # a first tour iteration to calculate the total volume to be tested for inclusion the tour nodes.
+
     # Primera Iteración: Cálculo del Volumen Total del Tour
     # En esta primera iteración, el código calcula el volumen total (tourVol) del tour y va pasando por cada nodo en tour.nodes:
     tourVol = 0.0
     for k, node in enumerate(tour.nodes):  # solve each node sequentialy
+        print(f"Node {node.ICAO}")
 
         # L_k destination nodes set
         unattended = [n.ID for n in tour.nodes[k+1:]]
@@ -150,15 +161,7 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
                             tour.score += c.S
                             nodeVol    += c.V
 
-        else: 
-            # SI ESTOY EN EL ÚLTIMO O PRIMER NODO
-            pass
-
-        ## SE ASIGNAN LOS DESTINOS A LAS PALLETS SEGÚN LA DEMANDA DE PAQUETES EN LOS NODOS 
-        if k < k0: 
-            common.setPalletsDestinations(items, pallets, tour.nodes, k, unattended)
-        else:
-            return # skip solving because it's the base on returning
+        common.setPalletsDestinations(items, pallets, tour.nodes, k, unattended)
 
         startNodeTime = time.perf_counter()
 
@@ -167,186 +170,216 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
         # to control solution items
         M = len(pallets)
         N = len(items)
-        # mp.Array to be shared by multiprocess jobs
-        solMatrix = mp.Array('i', [0 for _ in np.arange(N*M)] )
-        mpItems   = mp.Array('i', [0 for _ in np.arange(N)] ) # to check items inclusions feasibility
 
-        # I use dict to pass by reference
-        solDict   = dict(solMatrix=solMatrix)
-        itemsDict = dict(mpItems=mpItems)
-        modStatus = 0
+        if N > 0 and M > 0:
 
-        # nodeTorque -> TORQUE PALLET VACÍO
-        if method == "mpShims":
-            # SE LLENAN LAS PALLETS CON LA MEJOR COMBINACIÇON DE SHIMS (CONJUNTO DE ITEMS) E ITEMS INDIVIDUALES
-            mpShims.Solve(pallets, items, cfg, pi, k, eta1_vol, eta2_vol, node.tLim, "p", nodeTorque, solDict, itemsDict, tipo) # p - parallel
+            print(f"Node {node.ICAO} {len(items)} items {len(pallets)} pallets")
+            # mp.Array to be shared by multiprocess jobs
+            solMatrix = mp.Array('i', [0 for _ in np.arange(N*M)] )
+            mpItems   = mp.Array('i', [0 for _ in np.arange(N)] ) # to check items inclusions feasibility
 
-        if modStatus == 2: # 2: optimal
-            numOptDict["numOpt"] += 1
+            # I use dict to pass by reference
+            solDict   = dict(solMatrix=solMatrix)
+            itemsDict = dict(mpItems=mpItems)
+            modStatus = 0
+
+            # nodeTorque -> TORQUE PALLET VACÍO
+            if method == "mpShims":
+                # SE LLENAN LAS PALLETS CON LA MEJOR COMBINACIÇON DE SHIMS (CONJUNTO DE ITEMS) E ITEMS INDIVIDUALES
+                mpShims.Solve(pallets, items, cfg, pi, k, eta1_vol, eta2_vol, node.tLim, "p", nodeTorque, solDict, itemsDict, tipo) # p - parallel
+
+            if modStatus == 2: # 2: optimal
+                numOptDict["numOpt"] += 1
 
 
-        nodeElapsed = time.perf_counter() - startNodeTime
+            nodeElapsed = time.perf_counter() - startNodeTime
 
-        Y = np.reshape(solDict["solMatrix"], (-1, N)) # N number of items (columns)
-        # La matriz de soluciones (solMatrix) almacenada en solDict se reorganiza en una forma que tiene tantas filas 
-        # como pallets y tantas columnas como ítems. N es el número de ítems. Esta matriz representa qué ítems están 
-        # asignados a qué pallets.
-       
-        # begin ---- parallel solving the 3D packing for each pallet 
+            Y = np.reshape(solDict["solMatrix"], (-1, N)) # N number of items (columns)
+            # La matriz de soluciones (solMatrix) almacenada en solDict se reorganiza en una forma que tiene tantas filas 
+            # como pallets y tantas columnas como ítems. N es el número de ítems. Esta matriz representa qué ítems están 
+            # asignados a qué pallets.
+        
+            # begin ---- parallel solving the 3D packing for each pallet 
 
-        # Se crean listas para almacenar los procesos y los empaquetadores (Packer).
-        # Para cada fila de la matriz Y, que representa un pallet, se crea un nuevo empaquetador (Packer).
-        # Se agrega un Bin (contenedor) para cada pallet, con sus dimensiones y peso.
-        # Si el valor en la matriz Y es 1 (lo que indica que un ítem está asignado a este pallet), se agrega el ítem correspondiente al Packer.
-        # Luego, se inicia un proceso paralelo (mp.Process) para ejecutar la función de empaquetado del Packer en paralelo.
-        try:
-            procs   = [None for _ in pallets]
-            packers = [None for _ in pallets]
-            counter1 = 0
+            # Se crean listas para almacenar los procesos y los empaquetadores (Packer).
+            # Para cada fila de la matriz Y, que representa un pallet, se crea un nuevo empaquetador (Packer).
+            # Se agrega un Bin (contenedor) para cada pallet, con sus dimensiones y peso.
+            # Si el valor en la matriz Y es 1 (lo que indica que un ítem está asignado a este pallet), se agrega el ítem correspondiente al Packer.
+            # Luego, se inicia un proceso paralelo (mp.Process) para ejecutar la función de empaquetado del Packer en paralelo.
+            try:
+                procs   = [None for _ in pallets]
+                packers = [None for _ in pallets]
+                counter1 = 0
+                for i, row in enumerate(Y):
+                    packers[i] = Packer()
+                    packers[i].add_bin( Bin(f'pallet{i}', pallets[i].w, pallets[i].h, pallets[i].d, pallets[i].W, i) )
+
+                    for j, X_ij in enumerate(row):
+                        if X_ij:
+                            packers[i].add_item(Item(f'item{j}', items[j].w, items[j].h, items[j].d, 0, j))
+                            counter1 += 1
+                            print(f"Item {j} (ID: {items[j].ID}) asignado al pallet {i + 1}")  # Imprimir ítem asignado
+                    procs[i] = mp.Process(target=packers[i].pack())
+                    procs[i].start()
+
+                counter2 = 0
+                for i, proc in enumerate(procs):
+                    proc.join()
+                    for bin in packers[i].bins:
+                        i = bin.ID
+                        for item in bin.unfitted_items:
+                            j = item.ID
+                            Y[i][j] = 0
+                            counter2 += 1
+                            pallets[i].popItem(items[j], nodeTorque, solDict, N, itemsDict)
+                            print(f"Item {j} (ID: {items[j].ID}) no ajustado en pallet {i + 1}, se baja")  # Imprimir ítem no ajustado
+
+                if counter1 > 0:
+                    print(f"{100 * counter2 / counter1:.1f}% unfit items excluded from solution!")
+                    
+            except Exception as e:
+                print("Error en 3D")
+                print(e)
+                pass
+
+            nodeElapsed2 = time.perf_counter() - startNodeTime
+            # end ---- parallel solving the 3D packing for each pallet         
+
+            # Se inicializan variables para el puntaje del nodo (nodeScore) y el torque acumulado (torque).
+
+            nodeScore = 0
+            torque    = 0.0
+
             for i, row in enumerate(Y):
 
-                packers[i] = Packer()
-                packers[i].add_bin( Bin(f'pallet{i}', pallets[i].w, pallets[i].h, pallets[i].d, pallets[i].W, i) )
-                
-                for j, X_ij in enumerate(row):
-                    if X_ij:
-                        packers[i].add_item(Item(f'item{j}', items[j].w, items[j].h, items[j].d, 0, j))
-                        counter1 += 1
-                
-                procs[i] = mp.Process( target=packers[i].pack() )
-                procs[i].start()
-        
-        # Una vez que todos los procesos paralelos han terminado (proc.join()), se verifica si hay ítems que no pudieron 
-        # ser ajustados al pallet (ítems que no caben en el Bin).
-        # Estos ítems no ajustados (unfitted_items) se marcan como no asignados (Y[i][j] = 0), y se eliminan de la solución, llamando a pallets[i].popItem(), lo que también actualiza la solución
-
-            counter2 = 0
-            for i, proc in enumerate(procs):
-                proc.join()
-                for bin in packers[i].bins:
-                    i = bin.ID
-                    for item in bin.unfitted_items:
-                        j = item.ID
-                        Y[i][j] = 0
-                        counter2 += 1
-                        pallets[i].popItem(items[j], nodeTorque, solDict, N, itemsDict)
-        
-        # Se calcula el porcentaje de ítems que no pudieron ser ajustados en el pallet en comparación con el total 
-        # de ítems que intentaron ser asignados.
-
-            if counter1 > 0:
-                print(f"{100*counter2/counter1:.1f}% unfit items excluded from solution!")
-
-        except Exception as e:
-
-            pass
-
-        nodeElapsed2 = time.perf_counter() - startNodeTime
-        # end ---- parallel solving the 3D packing for each pallet         
-
-        # Se inicializan variables para el puntaje del nodo (nodeScore) y el torque acumulado (torque).
-
-        nodeScore = 0
-        torque    = 0.0
-
-        for i, row in enumerate(Y):
-
-            torque += 140 * pallets[i].D
-
-            for j, X_ij in enumerate(row):
-                if X_ij:
-                    # mount this node "k" consolidated
-                    consol[i][k].ID  = j+N
-                    consol[i][k].Frm = node.ID
-                    consol[i][k].To  = pallets[i].Dest[k]                    
-                    consol[i][k].W += items[j].W
-                    consol[i][k].V += items[j].V
-                    consol[i][k].S += items[j].S
-
-                    # Se recorre la matriz Y, que contiene la asignación de los ítems a los pallets. 
-                    # Para cada ítem asignado (X_ij es verdadero), se actualizan varias propiedades del nodo consolidado 
-                    # (consol[i][k]), como el ID del ítem, el peso (W), el volumen (V) y la superficie (S).
-                    # Se acumulan también los parámetros relacionados con el puntaje del nodo (nodeScore) y el volumen (nodeVol).
-
-                    # totalize parameters of this solution
-                    if writeConsFile: # write text files, 1 for packed each packed items
-                        wNodeAccum += float(items[j].W)
-                        vNodeAccum += float(items[j].V)
-
-                    nodeScore  += items[j].S
-                    nodeVol    += items[j].V
-
-                    torque += float(items[j].W) * pallets[i].D
-
-                     # Se acumula el puntaje total (BENEFICIO TOTAL) del nodo con el valor de la superficie de cada ítem (items[j].S), 
-                    # el volumen total del nodo (nodeVol) y el torque generado por cada ítem.
-
-        output_folder = os.path.join("resultados", f"{fecha_inicio}-{fecha_fin}" , f"{escenario}")
-        os.makedirs(output_folder, exist_ok=True)
-
-        # Definir el archivo CSV de salida dentro de la carpeta `resultados/vueloid`
-        output_csv_path = os.path.join(output_folder, "resultados.csv")
-
-        # Columnas del archivo CSV
-        header = ["Paquete_ID", "Pallet_ID", "Nodo_ID", "Peso", "Volumen", "Superficie", "Torque"]
-
-        # Abrir el archivo CSV en modo escritura
-        with open(output_csv_path, mode="w", newline="") as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(header)  # Escribir la cabecera
-
-            # Procesar cada pallet y nodo
-            for i, row in enumerate(Y):
-                torque += 140 * pallets[i].D  # Torque inicial del pallet
+                torque += 140 * pallets[i].D
 
                 for j, X_ij in enumerate(row):
                     if X_ij:
-                        # Obtener datos del paquete y nodo
-                        paquete_id = j + N
-                        pallet_id = i
-                        nodo_id = node.ID
-                        peso = items[j].W
-                        volumen = items[j].V
-                        beneficio = items[j].S
-                        torque_item = float(items[j].W) * pallets[i].D
+                        # mount this node "k" consolidated
+                        consol[i][k].ID  = j+N
+                        consol[i][k].Frm = node.ID
+                        consol[i][k].To  = pallets[i].Dest[k]                    
+                        consol[i][k].W += items[j].W
+                        consol[i][k].V += items[j].V
+                        consol[i][k].S += items[j].S
 
-                        # Escribir la fila con los datos en el archivo CSV
-                        writer.writerow([paquete_id, pallet_id, nodo_id, peso, volumen, superficie, torque_item])
+                        # Se recorre la matriz Y, que contiene la asignación de los ítems a los pallets. 
+                        # Para cada ítem asignado (X_ij es verdadero), se actualizan varias propiedades del nodo consolidado 
+                        # (consol[i][k]), como el ID del ítem, el peso (W), el volumen (V) y la superficie (S).
+                        # Se acumulan también los parámetros relacionados con el puntaje del nodo (nodeScore) y el volumen (nodeVol).
+
+                        # totalize parameters of this solution
+                        if writeConsFile: # write text files, 1 for packed each packed items
+                            wNodeAccum += float(items[j].W)
+                            vNodeAccum += float(items[j].V)
+
+                        nodeScore  += items[j].S
+                        nodeVol    += items[j].V
+
+                        torque += float(items[j].W) * pallets[i].D
+
+                        # Se acumula el puntaje total (BENEFICIO TOTAL) del nodo con el valor de la superficie de cada ítem (items[j].S), 
+                        # el volumen total del nodo (nodeVol) y el torque generado por cada ítem.
+
+                        # Imprimir la distribución de los ítems en los pallets
+                        print(f"Distribución de items en los pallets una vez llegó al nodo {node.ICAO}:")
+
+                        # Lista para llevar un registro de los paquetes que siguen a bordo y los que se bajan
+                        paquetes_a_bordo = []
+                        paquetes_bajados = []
+
+                        # Recorremos cada pallet y sus asignaciones de items
+                        for i, row in enumerate(Y):
+                            print(f"Pallet {i + 1}:")
+                            for j, X_ij in enumerate(row):
+                                if X_ij:
+                                    # Imprimir el paquete asignado al pallet
+                                    print(f"  Item {j + 1} (ID: {items[j].ID}) asignado al pallet {i + 1}")
+                                    print(f"  Destino del paquete: {items[j].To}")
+                                    # El paquete sigue a bordo
+                                    if X_ij == 1:
+                                        paquetes_a_bordo.append(items[j].ID)
+                                        print(f"    Paquete {items[j].ID} sigue a bordo en el nodo {node.ICAO}")
+                                    # El paquete se ha bajado
+                                    elif X_ij == 0:
+                                        paquetes_bajados.append(items[j].ID)
+                                        print(f"    Paquete {items[j].ID} se ha bajado en el nodo {node.ICAO}")
+
+                        # Imprimir los paquetes que siguen a bordo
+                        print(f"\nPaquetes que siguen a bordo después de este nodo {node.ICAO}:")
+                        for paquete in paquetes_a_bordo:
+                            print(f"  Paquete {paquete}")
+
+                        # Imprimir los paquetes que se han bajado
+                        print(f"\nPaquetes que se han bajado en este nodo {node.ICAO}:")
+                        for paquete in paquetes_bajados:
+                            print(f"  Paquete {paquete}")
+
+   
+
+            output_folder = os.path.join("resultados", f"{fecha_inicio}-{fecha_fin}" , f"{scenario}")
+            os.makedirs(output_folder, exist_ok=True)
+
+            # Definir el archivo CSV de salida dentro de la carpeta `resultados/vueloid`
+            output_csv_path = os.path.join(output_folder, "resultados.csv")
+
+            # Columnas del archivo CSV
+            header = ["Paquete_ID", "Pallet_ID", "Nodo_ID", "Peso", "Volumen", "Superficie", "Torque"]
+
+            # Abrir el archivo CSV en modo escritura
+            with open(output_csv_path, mode="w", newline="") as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(header)  # Escribir la cabecera
+
+                # Procesar cada pallet y nodo
+                for i, row in enumerate(Y):
+                    torque += 140 * pallets[i].D  # Torque inicial del pallet
+
+                    for j, X_ij in enumerate(row):
+                        if X_ij:
+                            # Obtener datos del paquete y nodo
+                            paquete_id = j + N
+                            pallet_id = i
+                            nodo_id = node.ID
+                            peso = items[j].W
+                            volumen = items[j].V
+                            beneficio = items[j].S
+                            torque_item = float(items[j].W) * pallets[i].D
+                            # Escribir la fila con los datos en el archivo CSV
+                            writer.writerow([paquete_id, pallet_id, nodo_id, peso, volumen, torque_item])
+
+    # Se actualizan los valores de tiempo transcurrido en el tour (tour.elapsed, tour.elapsed2).
+            tour.elapsed += nodeElapsed
+            tour.elapsed2 += nodeElapsed2
+    # El volumen del nodo se normaliza en relación con la capacidad de volumen (cfg.volCap).
+            nodeVol /= cfg.volCap
+    # Se calcula epsilon, que es la relación entre el torque acumulado y el torque máximo permitido (cfg.maxTorque).
+            epsilon = torque/cfg.maxTorque
+    # Si el volumen es mayor que 1.0, el puntaje del nodo se ajusta dividiéndolo por el volumen. Esto penaliza las soluciones con alto volumen.
+            if nodeVol > 1.0:
+                nodeScore /= nodeVol
+    # Se actualizan las estadísticas del tour, incluyendo el puntaje total (tour.score), el volumen promedio (tour.AvgVol) y el torque promedio (tour.AvgTorque).
+            tour.score += nodeScore
+            tour.AvgVol    += nodeVol
+            tour.AvgTorque += epsilon
+            f = tour.score
         
+            print(f"\tnode {node.ICAO}")
+            print(f"f {f:.2f}  vol {nodeVol:.2f} epsilon {epsilon:.2f}")
 
 
+            if writeConsFile: # write text files, 1 for packed each packed items
 
-# Se actualizan los valores de tiempo transcurrido en el tour (tour.elapsed, tour.elapsed2).
-        tour.elapsed += nodeElapsed
-        tour.elapsed2 += nodeElapsed2
-# El volumen del nodo se normaliza en relación con la capacidad de volumen (cfg.volCap).
-        nodeVol /= cfg.volCap
-# Se calcula epsilon, que es la relación entre el torque acumulado y el torque máximo permitido (cfg.maxTorque).
-        epsilon = torque/cfg.maxTorque
-# Si el volumen es mayor que 1.0, el puntaje del nodo se ajusta dividiéndolo por el volumen. Esto penaliza las soluciones con alto volumen.
-        if nodeVol > 1.0:
-            nodeScore /= nodeVol
-# Se actualizan las estadísticas del tour, incluyendo el puntaje total (tour.score), el volumen promedio (tour.AvgVol) y el torque promedio (tour.AvgTorque).
-        tour.score += nodeScore
-        tour.AvgVol    += nodeVol
-        tour.AvgTorque += epsilon
-        f = tour.score/tour.cost
-    
-        print(f"\tnode {node.ICAO}")
-        print(f"f {f:.2f}  vol {nodeVol:.2f} epsilon {epsilon:.2f}")
+                consNodeT = [None for _ in pallets]        
+                for i, p in enumerate(pallets):
+                    consNodeT[i] = consol[i][k]
 
+                vol = vNodeAccum/cfg.volCap
+                wei = wNodeAccum/cfg.weiCap
 
-        if writeConsFile: # write text files, 1 for packed each packed items
-
-            consNodeT = [None for _ in pallets]        
-            for i, p in enumerate(pallets):
-                consNodeT[i] = consol[i][k]
-
-            vol = vNodeAccum/cfg.volCap
-            wei = wNodeAccum/cfg.weiCap
-
-            #write consolidated contents from this node in file
-            common.writeNodeCons(scenario, instance, consNodeT, pi, node, epsilon, wei, vol)
+                #write consolidated contents from this node in file
+                common.writeNodeCons(scenario, instance, consNodeT, pi, node, epsilon, wei, vol)
 
 
 # end of solveTour 
@@ -400,12 +433,14 @@ if __name__ == "__main__":
 
     testing   = True
 
+    iRace_testing = False
+
     # shortest = True # 2 shortest tours
     shortest = False # All K! # esto podría ser TRUE AL trabajar con los cargo:
 
 
     df = pd.read_csv('flights_combined.csv')
-    df_paquetes = pd.read_csv('paquetes.csv')
+    df_paquetes = pd.read_csv('packages.csv')
 
     df_paquetes['due_date'] = pd.to_datetime(df_paquetes['due_date'])
     df['departure_date'] = pd.to_datetime(df['departure_date'])
@@ -416,13 +451,10 @@ if __name__ == "__main__":
 
     # Aplicar el filtro
     vuelos_filtrados = df[(df['departure_date'] >= fecha_inicio) & (df['departure_date'] <= fecha_fin)]
-    paquetes_filtrados = df_paquetes[(df_paquetes['due_date'] >= fecha_inicio) & (df_paquetes['due_date'] <= fecha_fin)]
-
     scenarios = list(range(len(vuelos_filtrados)))
 
-
     if testing:
-        scenarios = scenarios[0]
+        scenarios = [scenarios[0]]
 
     # timeLimit = 240
     # timeLimit = 1200
@@ -445,19 +477,26 @@ if __name__ == "__main__":
     for scenario in scenarios:
 
         vuelo = df.iloc[scenario]
-        # tomo su urigen y sus destinos y lo junto en una lista de nodos
+        # Restar 2 días a la fecha
+        paquetes_filtrados = df_paquetes[(df_paquetes['due_date'] >= (vuelo['departure_date'] - pd.Timedelta(days=2))) & 
+                    (df_paquetes['due_date'] <= (vuelo['departure_date'] + pd.Timedelta(days=5)))]
+
+        #actualizo el beneficio de los paquetes de acuerdo a su penalización
+        
         instances = [1]
-
         # tomo los nodos de la lista de destinos del escenario
-
         cfg = common.Config(vuelo, scenario)
+
+        # guardo el nombre de los aeropuertos
         aeropuertos = {}
-        for i in len(cfg.nodos):
+        for i in range(len(cfg.nodos)):
             aeropuertos[cfg.nodos[i]] = i
         
         distances_file = "./distances.csv"
+        df = pd.read_csv(distances_file)
         # tomo solo las filas que tengan unicamente nodos del escenario
-        distances_file_2 = df[df[0].isin(cfg.nodos) & df[1].isin(cfg.nodos)]
+        distances_file_2 = df[df.iloc[:, 0].isin(cfg.nodos) & df.iloc[:, 1].isin(cfg.nodos)]
+        print(distances_file_2)
 
         dists, _ = common.loadDistances(distances_file_2) # dists, cities
         costs = [[0.0 for _ in dists] for _ in dists]
@@ -471,6 +510,9 @@ if __name__ == "__main__":
         for i, cols in enumerate(dists):
             for j, dist in enumerate(cols):
                 costs[i][j] = cfg.kmCost*dist
+        
+        df_costs = pd.DataFrame(costs, columns=[cfg.nodos[0], cfg.nodos[1], cfg.nodos[2], cfg.nodos[3]], index=[cfg.nodos[0], cfg.nodos[1], cfg.nodos[2], cfg.nodos[3]])
+        print(df_costs)
     
         # Este bloque de código recorre la matriz dists (distancias entre nodos) y calcula los costos entre nodos. 
         #  Para cada par de nodos i y j, el costo entre ellos se calcula multiplicando la distancia dist por un valor cfg.kmCost, 
@@ -508,10 +550,9 @@ if __name__ == "__main__":
 
 
         if vuelo['Flight Type'] == 'Cargo':
-            tours = common.getTours(cfg.numNodes, costs, perc, aeropuertos)
-        
+            tours = common.getTours(cfg.numNodes, costs, perc, aeropuertos, "cargo")
         else:
-            tours = [cfg.nodos]
+            tours = common.getTours(cfg.numNodes, costs, perc, aeropuertos, "passenger")
 
         tourTime = timeLimit/len(tours)
 
@@ -540,7 +581,7 @@ if __name__ == "__main__":
                 # the tour cost is increased by the average torque deviation, limited to 5%
                 tour.AvgTorque /= cfg.numNodes 
 
-                tourSC = tour.score / tour.cost
+                tourSC = tour.score 
 
                 tour.AvgVol /= cfg.numNodes
 
@@ -561,19 +602,15 @@ if __name__ == "__main__":
             instBestAvgTorque += bestAvgTorque        
             # enf of for inst in instances:
         
-
-
-
-
-
-
         ###### IMPRIME RESULTADOS ######
+
+        folder = f"resultados/{scenario}"
             
         avgTime       = math.ceil(avgInstTime/numInst)
         bestAvgSC     = instBestAvgSC/numInst
         bestAvgVol    = instBestAvgVol/numInst
         bestAvgTorque = instBestAvgTorque/numInst
-           
+        
 
         icaos = []
         for n in bestTour:
@@ -596,33 +633,24 @@ if __name__ == "__main__":
         writeAvgResults(method, scenario, str, folder)
         
 
-if not iRace_testing:
+    if not iRace_testing:
 
-    folder = 
+        folder = "resultados_totales"
 
-    str = f"{bestAvgSC:.2f}\t&\t{avgTime:.0f}\t {bestAvgVol:.2f}\t {bestAvgTorque:.2f}"
-    # instances average
-    writeAvgResults(method, scenario, str, folder)
+        print(f"Resultados avion nro: {scenario}")
+        print(f"Beneficio total: {bestAvgSC:.2f}\t&\tTiempo promedio: {avgTime:.0f}\t Volumen promedio: {bestAvgVol:.2f}\t Torque promedio: {bestAvgTorque:.2f}")
+        # print(f"{folder}")
+        print(f"{len(tours)} tours")
+        print(f"    best: {sbest_tour}")
+        # print(f"shortest: {shortestTour}")
 
-    print(f"{str}")
-    # print(f"{folder}")
-    print(f"{len(tours)} tours")
-    # print(f"tourTime: {tourTime} \t shortest = {shortest}")
-    # print(f"eta1_vol: {eta1_vol:.2f}")
-    # print(f"Before:\t{beforeDict['value']:.1f}") 
-    # print(f"After:\t{afterDict['value']:.1f}")
-    # print(f"% of optima: {numOptDict['numOpt']:.2f}")
-    # print(f"{method}")
-    print(f"    best: {sbest_tour}")
-    # print(f"shortest: {shortestTour}")
+        mainElapsed = time.perf_counter() - mainStart
 
-    mainElapsed = time.perf_counter() - mainStart
+        overallSC += bestAvgSC
 
-    overallSC += bestAvgSC
+        print(f"mainElapsed: {mainElapsed:.1f}    overall SC: {overallSC:.3f}")
 
-    print(f"mainElapsed: {mainElapsed:.1f}    overall SC: {overallSC:.3f}")
-
-else:
-    print(-1*instBestAvgSC/numInst) # -1: iRace minimizes a cost value
+    else:
+        print(-1*instBestAvgSC/numInst) # -1: iRace minimizes a cost value
 
 #"""

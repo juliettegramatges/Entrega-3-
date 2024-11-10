@@ -7,27 +7,25 @@ from time import time
 import random
 import pandas as pd
 import csv
+import ast
 
 
-def loadDistances(fname):
-    # Obtener ruta absoluta del archivo
-    fname = os.path.abspath(fname)
-    # Leer los pares de ciudades y distancias
+
+def loadDistances(df):
     cities_set = set()
     distances_dict = {}
-    with open(fname, mode="r") as file:
-        reader = csv.reader(file)
+
+    # Iterar sobre las filas del DataFrame
+    for _, row in df.iterrows():
+        city1, city2 = row[0], row[1]  # Asegúrate de usar los índices correctos de las columnas
+        distance = int(row[2])  # O cualquier otro tipo de conversión si la distancia no es un entero
         
-        for row in reader:
-            city1, city2 = row[0], row[1]
-            distance = int(row[2])
-            
-            # Añadir ciudades al set
-            cities_set.update([city1, city2])
-            
-            # Guardar la distancia en un diccionario usando tuplas de ciudades como clave
-            distances_dict[(city1, city2)] = distance
-            distances_dict[(city2, city1)] = distance  # Simetría de la distancia
+        # Añadir ciudades al set
+        cities_set.update([city1, city2])
+        
+        # Guardar la distancia en el diccionario usando tuplas de ciudades como clave
+        distances_dict[(city1, city2)] = distance
+        distances_dict[(city2, city1)] = distance  # Simetría de la distancia
 
     # Crear una lista de ciudades únicas y ordenar
     cities = sorted(cities_set)
@@ -47,8 +45,7 @@ def loadDistances(fname):
 class Config:
     def __init__(self, vuelo, scenario):
         # Si 'vuelo' es un diccionario, asegúrate de que los valores se extraigan correctamente
-        self.nodos = [vuelo['origin']] + vuelo['destinations'].split(", ")
-        
+        self.nodos = [vuelo['origin']] + ast.literal_eval(vuelo['destinations'])
         self.weiCap = 0
         self.volCap = 0
         self.numNodes = len(self.nodos)
@@ -56,12 +53,12 @@ class Config:
         self.plane_type = vuelo['Plane Type']
         self.flight_type = vuelo['Flight Type']
         self.vol      = vuelo['Volume (cubic meters)']
-        self.wei = vuelo['Weight (kg)']
+        self.wei = 200000000
 
         self.numPallets = 6 if self.flight_type == 'Narrow-Body' else 10
         self.payload    = 26_000
         self.maxTorque  = 26_000 * 0.556
-        self.kmCost     = vuelo['cost_per_km']
+        self.kmCost     = vuelo['Cost per km']
 
 class Pallet(object):
     def __init__(self, id, d, v, w, numNodes):
@@ -154,6 +151,18 @@ class Pallet(object):
                         feasible = False                       
         return feasible
 
+def fillPallet(pallet, items, k, nodeTorque, solDict, cfg, vthreshold, itemsDict, lock, ts=1.0):
+    N = len(items)
+    counter = 0
+    for item in items:
+        if pallet.isFeasible(item, vthreshold, k, nodeTorque,cfg, itemsDict, lock, ts):
+            
+            pallet.putItem(item,nodeTorque,solDict,N, itemsDict, lock)
+            counter += 1
+    return counter
+
+
+
 def loadPallets(cfg):
     """
     Load pallets attributes based on aircraft size
@@ -163,22 +172,22 @@ def loadPallets(cfg):
     vol = 0
     wei = 0
 
-    if cfg.flight_type == "Passenger" & cfg.plane_type == "Narrow-Body":
+    if cfg.flight_type == "Passenger" and cfg.plane_type == "Narrow-Body":
         vol = cfg.vol/6
         wei = 10**100
         dists = [2.5,1.5,0.5,-0.5,-1.5,-2.5] # distances of pallets centroids to the center of gravity
     
-    if cfg.flight_type == "Cargo" & cfg.plane_type == "Narrow-Body":
+    if cfg.flight_type == "Cargo" and cfg.plane_type == "Narrow-Body":
         vol = cfg.vol/6
         wei = 10**100
         dists = [7.5,4.5,1.5,-1.5,-4.5,-7.5] # distances of pallets centroids to the center of gravity
 
-    if cfg.flight_type == "Passenger" & cfg.plane_type == "Wide-Body":
+    if cfg.flight_type == "Passenger" and cfg.plane_type == "Wide-Body":
         vol = cfg.vol/10
         wei = 10**100
         dists = [5.85,4.55,3.25,1.95,0.65,-0.65,-1.95,-3.25,-4.55,-5.85] # distances of pallets centroids to the center of gravity
     
-    if cfg.flight_type == "Cargo" & cfg.plane_type == "Wide-Body":
+    if cfg.flight_type == "Cargo" and cfg.plane_type == "Wide-Body":
         vol = cfg.vol/10
         wei = 10**100
         dists = [13.5,10.5,7.5,4.5,1.5,-1.5,-4.5,-7.5,-10.5,-13.5] # distances of pallets centroids to the center of gravity
@@ -231,10 +240,22 @@ class Node(object):
         self.ID   = id
         self.tLim = 1 # 1s
         self.Vol  = 0.0
+        print(f"ID: {id}")
+        print(f"Diccionario: {diccionario}")
+        
+        # Inicializamos ICAO como None
+        self.ICAO = None
+        
+        # Buscamos el ICAO en el diccionario
         for key, value in diccionario.items():
             if id == value:
                 self.ICAO = key
-            break 
+                break
+        
+        # Si no se encuentra ICAO, no creamos el objeto
+        if self.ICAO is None:
+            print(f"El ID {id} no tiene un ICAO válido. El objeto no será creado.")
+            return  # Salimos del constructor sin crear el objeto
 
 
 
@@ -252,8 +273,8 @@ class Item(object):
         self.ID = id
         self.P  = p  # -1 if an item, -2 if a consollidated, or pallet ID. 
         # ID del palé en el que el ítem podría ir, o valores especiales como -1 (ítem independiente) y -2 (ítem consolidado).
-        self.w  = w  # weight
-        self.s  = s  # score
+        self.W  = w  # weight
+        self.S  = s  # score
         self.V  = v  # volume
         self.Frm = frm  # origin node ID
         self.To = to # destination node ID
@@ -261,23 +282,29 @@ class Item(object):
 
 
 
-def getTours(num, costs, threshold, aeropuertos):
+def getTours(num, costs, threshold, aeropuertos, tipo):
 
-    p = permutations(num)
+    if tipo == "passenger":
+        p = [permutations(num)[0]] # combinación actual
+    
+    else:
+        p = permutations(num)
+    
+    print(f"Permutaciones: {[i for i in p]}")
 
     #+2: the base before and after the permutation
     # Se crea una lista de listas, toursInt, que tiene el mismo número de filas que el número de permutaciones (p), 
     # y cada fila tiene dos columnas adicionales que se utilizan para representar el recorrido (con un valor inicial de 0).
     
     toursInt = [
-        [0 for _ in np.arange(len(p[0])+2)] for _ in np.arange(len(p))
+        [0 for _ in np.arange(len(p[0]))] for _ in np.arange(len(p))
         ]
 
     # define the core of the tours. Se recorren todas las permutaciones generadas y se llenan las listas dentro de toursInt 
     # con los valores correspondientes, ajustando el índice (sumando 1) ya que se está trabajando con índices que empiezan desde 1.
     for i, row in enumerate(p):
         for j, col in enumerate(row):
-            toursInt[i][j+1] = col+1
+            toursInt[i][j] = col
 
 
     tours = [None for _ in np.arange(len(toursInt))]
@@ -312,6 +339,8 @@ def getTours(num, costs, threshold, aeropuertos):
 
         if cost > maxCost:
             maxCost = cost
+        
+        print(f"Tour {i}: {nodes}, Costo: {cost}")
 
         tours[i] = Tour(nodes, cost)
 
@@ -329,15 +358,11 @@ def getTours(num, costs, threshold, aeropuertos):
 
 
 # used in sequential mode
-def loadNodeItems(scenario, instance, node, unatended, fname, aeropuertos): # unatended, future nodes
+def loadNodeItems(scenario, instance, node, unatended, df, aeropuertos): # unatended, future nodes
     """
     Load this node to unnatended items attributes
     Items destined outside the rest of the flight plan will not be loaded (13 and 14).
     """
-
-    reader = open(fname, "r")
-    lines = reader.readlines() 
-
     items = []
     id = 0
 
@@ -346,25 +371,24 @@ def loadNodeItems(scenario, instance, node, unatended, fname, aeropuertos): # un
     # Si el nodo de origen coincide con el nodo actual (node.ID) y el nodo de destino está en la lista de nodos no atendidos (unatended), 
     # el item se agrega al nodo y su volumen se incrementa en v. Luego, el item es añadido a la lista items.
 
-    # veo la demanda de cada nodo
-    try:
-        for line in lines:
-            cols = line.split().split(",")
-            w   =   int(cols[4]) # width
-            s   =   int(cols[6]) # benefit
-            h   =   int(cols[3]) # height
-            d   =   int(cols[2]) # wide
-            v   =   int(cols[2])*int(cols[3])*int(cols[4])
-            frm =   aeropuertos[cols[0]]
-            to  =   aeropuertos[cols[2]]
+    # veo los paquetes que hay en cada nodo:
+    for index, row in df.iterrows():
+        # Accediendo a las posiciones por iloc
+        w = row.iloc[4]  # ancho
+        s = row.iloc[6]  # beneficio
+        h = row.iloc[3]  # altura
+        d = row.iloc[2]  # profundidad
+        v = row.iloc[2] * row.iloc[3] * row.iloc[4]  # volumen
+        if row.iloc[0] not in aeropuertos.keys() or row.iloc[1] not in aeropuertos.keys():
+            pass
+        else:
+            frm = aeropuertos[row.iloc[0]]  # nodo de origen
+            to = aeropuertos[row.iloc[1]]  # nodo de destino
             if frm == node.ID and to in unatended:
-                node.Vol += v       
-                items.append( Item(id, -1, w, s, v, h, d, frm, to) ) # P:-1 item, -2: consolidated
+                node.Vol += v
+                items.append(Item(id, -1, w, s, v, h, d, frm, to))  # Crea un nuevo Item
                 id += 1
-
-    finally:
-        reader.close()  
-          
+        
     items.sort(key=lambda x: x.S/x.V, reverse=True)
     id = 0
 
@@ -376,7 +400,6 @@ def loadNodeItems(scenario, instance, node, unatended, fname, aeropuertos): # un
 
     # proceso de Optimización por Colonia de Hormigas (Ant Colony Optimization, ACO) al calcular una medida de "atractividad" 
     # (attractiveness) para cada elemento en items
-
     if len(items) > 0:
 
         bestAttr = items[0].S / items[0].V # the first item has the best attractiveness
@@ -429,13 +452,4 @@ def setPalletsDestinations(items, pallets, nodes, k, L_k):
             pallets[p.ID].Dest[k] = max
 # end of setPalletsDestinations
  
-
-def fillPallet(pallet, items, k, nodeTorque, solDict, cfg, vthreshold, itemsDict, lock, ts=1.0):
-    N = len(items)
-    counter = 0
-    for item in items:
-        if pallet.isFeasible(item, vthreshold, k, nodeTorque,cfg, itemsDict, lock, ts):
-            pallet.putItem(item,nodeTorque,solDict,N, itemsDict, lock)
-            counter += 1
-    return counter
 

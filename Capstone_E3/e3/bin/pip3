@@ -1,4 +1,6 @@
-#!/Users/juliettegramatges/Capstone_E3/e3/bin/python3.12
+#!/bin/sh
+'''exec' "/Users/juliettegramatges/Copia de Capstone_E3/e3/bin/python3.13" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
