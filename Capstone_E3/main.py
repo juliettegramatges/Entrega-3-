@@ -445,9 +445,9 @@ if __name__ == "__main__":
     df_paquetes['due_date'] = pd.to_datetime(df_paquetes['due_date'])
     df['departure_date'] = pd.to_datetime(df['departure_date'])
 
-    # Filtrar las filas dentro del rango de fechas (1 de enero - 14 de enero de 2024)
-    fecha_inicio = '2024-01-01'
-    fecha_fin = '2024-01-14'
+    # Filtrar las filas dentro del rango de fechas (1 de enero - 14 de enero de 2024) AHORA PRUEBO ULTIMA QUINCENA DE ENERO
+    fecha_inicio = '2024-01-15'
+    fecha_fin = '2024-01-28'
 
     # Aplicar el filtro
     vuelos_filtrados = df[(df['departure_date'] >= fecha_inicio) & (df['departure_date'] <= fecha_fin)]
