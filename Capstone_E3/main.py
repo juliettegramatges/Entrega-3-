@@ -66,7 +66,12 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
     for k, node in enumerate(tour.nodes):  # solve each node sequentialy
 
         # the solving node time is proportional to its relative sum of candidate items volumes
-        node.tLim = (node.Vol/tourVol) * tourTime
+        if tourVol != 0:
+            node.tLim = (node.Vol / tourVol) * tourTime
+        else:
+            # Manejo alternativo si tourVol es cero, por ejemplo, asignando un valor predeterminado
+            node.tLim = 0  # O el valor adecuado en caso de que el volumen del tour sea cero
+
 
         # VEO EL SIGUIENTE NODO
 
@@ -297,6 +302,9 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
                                     # Imprimir el paquete asignado al pallet
                                     print(f"  Item {j + 1} (ID: {items[j].ID}) asignado al pallet {i + 1}")
                                     print(f"  Destino del paquete: {items[j].To}")
+
+                                    paquetes_df.loc[paquetes_df['id'] == (items[j].ID - 1), 'assigned'] = True
+
                                     # El paquete sigue a bordo
                                     if X_ij == 1:
                                         paquetes_a_bordo.append(items[j].ID)
@@ -366,7 +374,7 @@ def solveTour(fecha_fin, fecha_inicio, vuelo, scenario, instance, pi, tour, meth
             f = tour.score
         
             print(f"\tnode {node.ICAO}")
-            print(f"f {f:.2f}  vol {nodeVol:.2f} epsilon {epsilon:.2f}")
+            #print(f"f {f:.2f}  vol {nodeVol:.2f} epsilon {epsilon:.2f}")
 
 
             if writeConsFile: # write text files, 1 for packed each packed items
@@ -420,6 +428,8 @@ def writeResults(method, scenario, folder, fvalue, elapsed):
     finally:
         writer.close() 
 
+TOTAL = 0
+aviones = []
 
 if __name__ == "__main__":
 
@@ -439,30 +449,41 @@ if __name__ == "__main__":
     shortest = False # All K! # esto podría ser TRUE AL trabajar con los cargo:
 
 
-    df = pd.read_csv('flights_combined.csv')
-    df_paquetes = pd.read_csv('packages.csv')
+    df_vuelos = pd.read_csv('C:/Users/ignac/Downloads/Entrega-3--main/Entrega-3--main/Capstone_E3/flights_combined.csv')
+
+
+
+    df_paquetes = pd.read_csv('C:/Users/ignac/Downloads/Entrega-3--main/Entrega-3--main/Capstone_E3/packages.csv')
+    df_paquetes['assigned'] = False  # Initialize this before calling solveTour
+
 
     df_paquetes['due_date'] = pd.to_datetime(df_paquetes['due_date'])
-    df['departure_date'] = pd.to_datetime(df['departure_date'])
+    df_vuelos['departure_date'] = pd.to_datetime(df_vuelos['departure_date'])
 
     # Filtrar las filas dentro del rango de fechas (1 de enero - 14 de enero de 2024) AHORA PRUEBO ULTIMA QUINCENA DE ENERO
     fecha_inicio = '2024-01-15'
     fecha_fin = '2024-01-28'
 
     # Aplicar el filtro
-    vuelos_filtrados = df[(df['departure_date'] >= fecha_inicio) & (df['departure_date'] <= fecha_fin)]
-    scenarios = list(range(len(vuelos_filtrados)))
+    vuelos_filtrados = df_vuelos[(df_vuelos['departure_date'] >= fecha_inicio) & (df_vuelos['departure_date'] <= fecha_fin)]
+    
+    # Extraer los IDs de los vuelos filtrados en lugar de un rango numérico
+    scenarios = vuelos_filtrados['id'].tolist() 
+
+    print(len(scenarios))
+    print(scenarios)
 
     if testing:
-        scenarios = [scenarios[0]]
+        scenarios = scenarios
 
-    # timeLimit = 240
+
+    timeLimit = 240
     # timeLimit = 1200
     # timeLimit = 2400
-    timeLimit = 3600 # if there is any metaheuristics in the experiment (except Shims)
+    #timeLimit = 3600 # if there is any metaheuristics in the experiment (except Shims)
     method = "mpShims"
 
-    print(f"timeLimit:{timeLimit}   method: {method}   shortest: {shortest}")
+    #print(f"timeLimit:{timeLimit}   method: {method}   shortest: {shortest}")
 
     # PARA EL mpShims
 
@@ -475,11 +496,12 @@ if __name__ == "__main__":
     overallSC = 0.0
 
     for scenario in scenarios:
-
-        vuelo = df.iloc[scenario]
+        
+        vuelo = df_vuelos.iloc[scenario-1]
         # Restar 2 días a la fecha
         paquetes_filtrados = df_paquetes[(df_paquetes['due_date'] >= (vuelo['departure_date'] - pd.Timedelta(days=2))) & 
-                    (df_paquetes['due_date'] <= (vuelo['departure_date'] + pd.Timedelta(days=5)))]
+                                 (df_paquetes['due_date'] <= vuelo['departure_date']) & 
+                                 (~df_paquetes['assigned'])]
 
         #actualizo el beneficio de los paquetes de acuerdo a su penalización
         
@@ -493,10 +515,11 @@ if __name__ == "__main__":
             aeropuertos[cfg.nodos[i]] = i
         
         distances_file = "./distances.csv"
-        df = pd.read_csv(distances_file)
+        df = pd.read_csv('C:/Users/ignac/Downloads/Entrega-3--main/Entrega-3--main/Capstone_E3/distances.csv')
+
         # tomo solo las filas que tengan unicamente nodos del escenario
         distances_file_2 = df[df.iloc[:, 0].isin(cfg.nodos) & df.iloc[:, 1].isin(cfg.nodos)]
-        print(distances_file_2)
+        #print(distances_file_2)
 
         dists, _ = common.loadDistances(distances_file_2) # dists, cities
         costs = [[0.0 for _ in dists] for _ in dists]
@@ -504,15 +527,15 @@ if __name__ == "__main__":
         # matriz costs de tamaño n x n, donde n es la cantidad de elementos en dists, y todos los valores son 0.0
 
 
-        print(f"timeLimit:{timeLimit}    method: {method}   shortest: {shortest}")
-        print(f"\n{cfg.numNodes} nodes")
+        #print(f"timeLimit:{timeLimit}    method: {method}   shortest: {shortest}")
+        #print(f"\n{cfg.numNodes} nodes")
 
         for i, cols in enumerate(dists):
             for j, dist in enumerate(cols):
                 costs[i][j] = cfg.kmCost*dist
         
-        df_costs = pd.DataFrame(costs, columns=[cfg.nodos[0], cfg.nodos[1], cfg.nodos[2], cfg.nodos[3]], index=[cfg.nodos[0], cfg.nodos[1], cfg.nodos[2], cfg.nodos[3]])
-        print(df_costs)
+        df_costs = pd.DataFrame(costs, columns=cfg.nodos, index=cfg.nodos)
+        #print(df_costs)
     
         # Este bloque de código recorre la matriz dists (distancias entre nodos) y calcula los costos entre nodos. 
         #  Para cada par de nodos i y j, el costo entre ellos se calcula multiplicando la distancia dist por un valor cfg.kmCost, 
@@ -575,8 +598,20 @@ if __name__ == "__main__":
                 tour.score   = 0.0
                 tour.AvgVol  = 0.0
 
+                
+
                 solveTour(fecha_fin, fecha_inicio, vuelo, scenario, inst, pi, tour, method, pallets, cfg, tourTime, tipo, numOptDict, rampDistCG, afterDict, 
                             beforeDict, eta1_vol, eta2_vol, paquetes_filtrados, aeropuertos)
+                
+
+                
+                for index, paquete in paquetes_filtrados.iterrows():
+                    
+                    # Cambiar el valor de 'assigned' en 'paquetes_filtrados' y reflejar en 'df_paquetes'
+                    if paquete['assigned']: 
+                        print("xd") 
+                        df_paquetes.at[index-1, 'assigned'] = True
+                    
 
                 # the tour cost is increased by the average torque deviation, limited to 5%
                 tour.AvgTorque /= cfg.numNodes 
@@ -610,6 +645,9 @@ if __name__ == "__main__":
         bestAvgSC     = instBestAvgSC/numInst
         bestAvgVol    = instBestAvgVol/numInst
         bestAvgTorque = instBestAvgTorque/numInst
+
+        aviones.append(scenario)
+        TOTAL += bestAvgSC 
         
 
         icaos = []
@@ -654,3 +692,6 @@ if __name__ == "__main__":
         print(-1*instBestAvgSC/numInst) # -1: iRace minimizes a cost value
 
 #"""
+
+print(aviones)
+print(TOTAL)
